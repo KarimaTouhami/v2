@@ -14,6 +14,14 @@ export interface ApproachStep {
   desc: string;
 }
 
+export interface Education {
+  school: string;
+  degree: string;
+  field: string;
+  period: string;
+  description?: string;
+}
+
 export interface StackCategory {
   title: string;
   icon: React.ReactElement;
@@ -48,6 +56,23 @@ export const APPROACH_STEPS: ApproachStep[] = [
   { title: "User-Centric", desc: "I start by understanding the 'why' behind the feature." },
   { title: "Scalable Architecture", desc: "Code is written to be read and maintained by humans." },
   { title: "Performance First", desc: "60fps interactions and <1s load times are my standard." },
+];
+
+export const EDUCATION: Education[] = [
+  {
+    school: "SUPTEM",
+    degree: "Bachelor's Degree",
+    field: "Software Engineering",
+    period: "2021 - 2024",
+    description: "Graduated with honors. Focused on full-stack development, algorithms, and software architecture patterns."
+  },
+  {
+    school: "ALX Africa",
+    degree: "Software Engineering Program",
+    field: "Full-Stack Development",
+    period: "2023 - 2024",
+    description: "Intensive 12-month program covering modern web development, DevOps, and professional software engineering practices."
+  }
 ];
 
 export const STACK_CATEGORIES: StackCategory[] = [
