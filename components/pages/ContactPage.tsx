@@ -19,7 +19,7 @@ export const ContactPage: React.FC = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <a 
-            href="mailto:karima@example.com" 
+            href="mailto:karimatouhami246@gmail.com" 
             className="group p-8 bg-white dark:bg-neutral-900 rounded-3xl border-2 border-neutral-200 dark:border-neutral-800 hover:border-black dark:hover:border-white transition-all hover:-translate-y-2 hover:shadow-2xl hover:shadow-neutral-300/30 dark:hover:shadow-black/50 duration-300"
           >
             <div className="flex items-center gap-4 mb-4">
@@ -29,11 +29,11 @@ export const ContactPage: React.FC = () => {
               <h3 className="text-xl font-bold font-inter text-neutral-900 dark:text-white">Email</h3>
             </div>
             <p className="text-neutral-500 dark:text-neutral-400 mb-2">Drop me a line</p>
-            <p className="text-lg font-semibold text-neutral-900 dark:text-white group-hover:underline decoration-2 underline-offset-4 break-all">karima@example.com</p>
+            <p className="text-lg font-semibold text-neutral-900 dark:text-white group-hover:underline decoration-2 underline-offset-4 break-all">karimatouhami246@gmail.com</p>
           </a>
 
           <a 
-            href="#" 
+            href="https://www.linkedin.com/in/karimatouhami/" 
             target="_blank" 
             rel="noopener noreferrer" 
             className="group p-8 bg-white dark:bg-neutral-900 rounded-3xl border-2 border-neutral-200 dark:border-neutral-800 hover:border-black dark:hover:border-white transition-all hover:-translate-y-2 hover:shadow-2xl hover:shadow-neutral-300/30 dark:hover:shadow-black/50 duration-300"
@@ -49,7 +49,7 @@ export const ContactPage: React.FC = () => {
           </a>
 
           <a 
-            href="#" 
+            href="https://github.com/KarimaTouhami" 
             target="_blank" 
             rel="noopener noreferrer" 
             className="group p-8 bg-white dark:bg-neutral-900 rounded-3xl border-2 border-neutral-200 dark:border-neutral-800 hover:border-black dark:hover:border-white transition-all hover:-translate-y-2 hover:shadow-2xl hover:shadow-neutral-300/30 dark:hover:shadow-black/50 duration-300"
@@ -64,7 +64,7 @@ export const ContactPage: React.FC = () => {
             <p className="text-lg font-semibold text-neutral-900 dark:text-white group-hover:underline decoration-2 underline-offset-4">@KarimaTouhami</p>
           </a>
 
-          <div className="p-8 bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-900/10 dark:to-emerald-900/10 rounded-3xl border-2 border-green-200 dark:border-green-900/40">
+          <div className="p-8 bg-linear-to-br from-green-50 to-emerald-50 dark:from-green-900/10 dark:to-emerald-900/10 rounded-3xl border-2 border-green-200 dark:border-green-900/40">
              <div className="flex items-center gap-4 mb-4">
               <div className="p-4 bg-white dark:bg-neutral-800 rounded-2xl shadow-sm">
                 <MapPin size={24} className="text-green-600 dark:text-green-400" />

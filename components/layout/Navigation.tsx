@@ -22,9 +22,6 @@ export const Navigation = React.memo<NavigationProps>(({ activePage, setActivePa
           onClick={() => { setActivePage('home'); setIsMenuOpen(false); }}
           className="group cursor-pointer flex items-center gap-3 select-none relative z-50"
         >
-          <div className="w-10 h-10 bg-black dark:bg-white rounded-xl flex items-center justify-center text-white dark:text-black font-bold text-xl group-hover:rotate-12 transition-transform duration-300 shadow-lg shadow-black/20 dark:shadow-white/20 font-inter">
-            K
-          </div>
           <div className="flex flex-col">
             <span className="font-bold text-lg leading-none tracking-tight font-inter">Karima Touhami</span>
             <span className="text-xs text-neutral-500 font-mono group-hover:text-neutral-800 dark:group-hover:text-neutral-300 transition-colors">Software Engineer</span>
@@ -49,7 +46,12 @@ export const Navigation = React.memo<NavigationProps>(({ activePage, setActivePa
             ))}
           </div>
           <button className="hidden lg:flex px-5 py-2.5 rounded-full bg-black dark:bg-white text-white dark:text-black text-sm font-bold hover:scale-105 transition-transform shadow-lg font-inter">
-            Download CV
+            <a 
+                href="/Karima-Touhami-Resume.pdf" 
+                download="Karima-Touhami-Resume.pdf"
+            >
+              Download CV
+            </a>
           </button>
         </div>
 
