@@ -111,9 +111,13 @@ export const HomePage: React.FC<HomePageProps> = ({ setActivePage, onViewProject
               ))}
             </div>
 
-            <button className="px-6 py-3 rounded-xl bg-neutral-900 dark:bg-white text-white dark:text-black hover:opacity-90 transition-opacity flex items-center gap-3 font-bold text-sm shadow-lg font-inter">
+            <a 
+              href="/Karima-Touhami-Resume.pdf" 
+              download="Karima-Touhami-Resume.pdf"
+              className="px-6 py-3 rounded-xl bg-neutral-900 dark:bg-white text-white dark:text-black hover:opacity-90 transition-opacity flex items-center gap-3 font-bold text-sm shadow-lg font-inter w-fit"
+            >
               <Download size={18} /> Download Full Resume
-            </button>
+            </a>
           </RevealOnScroll>
         </div>
         

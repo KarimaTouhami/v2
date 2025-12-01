@@ -82,11 +82,15 @@ export const Navigation = React.memo<NavigationProps>(({ activePage, setActivePa
               </button>
             ))}
           </div>
-          <div className="mt-auto mb-10 pb-10">
-            <button className="w-full p-4 text-center text-lg font-bold rounded-2xl bg-black dark:bg-white text-white dark:text-black">
-              Download CV
-            </button>
-          </div>
+            <div className="mt-auto mb-10 pb-10">
+              <a 
+                href="/Karima-Touhami-Resume.pdf" 
+                download="Karima-Touhami-Resume.pdf"
+                className="block w-full p-4 text-center text-lg font-bold rounded-2xl bg-black dark:bg-white text-white dark:text-black"
+              >
+                Download CV
+              </a>
+            </div>
         </div>
       )}
     </nav>
