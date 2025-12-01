@@ -2,7 +2,7 @@ import React from 'react';
 import { ArrowRight, Download } from 'lucide-react';
 import { usePageTitle } from '@/hooks/usePageTitle';
 import { PROJECTS } from '@/data/projects';
-import { EXPERIENCE, APPROACH_STEPS } from '@/data/content';
+import { EXPERIENCE, APPROACH_STEPS, EDUCATION } from '@/data/content';
 import { Project } from '@/data/projects';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { RevealOnScroll } from '@/components/ui/RevealOnScroll';
@@ -31,7 +31,7 @@ export const HomePage: React.FC<HomePageProps> = ({ setActivePage, onViewProject
         
         <RevealOnScroll delay={100}>
           <div className="relative">
-            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold tracking-tight mb-8 leading-none text-neutral-900 dark:text-white font-inter">
+            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-7xl font-bold tracking-tight mb-8 leading-none text-neutral-900 dark:text-white font-inter">
               I&apos;m Karima. <br />
               I build <span className="text-neutral-400 dark:text-neutral-600">scalable</span> <br />
               software solutions.
@@ -64,12 +64,12 @@ export const HomePage: React.FC<HomePageProps> = ({ setActivePage, onViewProject
       </section>
 
       <section className="py-24 md:py-32 px-6 max-w-6xl mx-auto border-t border-neutral-100 dark:border-neutral-900">
-        <div className="flex justify-between items-end mb-16 md:mb-20">
+        <div className="flex justify-between items-center mb-16 md:mb-20">
           <SectionHeading number="01">Selected Works</SectionHeading>
           <RevealOnScroll>
             <button 
               onClick={() => setActivePage('projects')}
-              className="group flex items-center gap-2 text-sm font-semibold text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors pb-2"
+              className="group flex items-center gap-2 text-sm font-semibold text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors"
             >
               View all projects <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
             </button>
@@ -134,6 +134,25 @@ export const HomePage: React.FC<HomePageProps> = ({ setActivePage, onViewProject
                   </div>
                   <p className="text-neutral-800 dark:text-neutral-300 font-medium mb-2">{job.role}</p>
                   <p className="text-sm text-neutral-500 leading-relaxed">{job.description}</p>
+                </div>
+              </RevealOnScroll>
+            ))}
+          </div>
+
+          <RevealOnScroll>
+            <h3 className="text-xs font-bold uppercase tracking-widest text-neutral-400 mb-10">Education</h3>
+          </RevealOnScroll>
+          <div className="space-y-6">
+            {EDUCATION.map((edu, index) => (
+              <RevealOnScroll key={index} delay={index * 100}>
+                <div className="group relative pl-8 border-l border-neutral-200 dark:border-neutral-800 hover:border-black dark:hover:border-white transition-colors duration-300">
+                  <div className="absolute -left-[5px] top-0 w-2.5 h-2.5 rounded-full bg-neutral-200 dark:bg-neutral-800 group-hover:bg-black dark:group-hover:bg-white transition-colors duration-300 shadow-sm"></div>
+                  <div className="flex justify-between items-start mb-2">
+                    <h4 className="font-bold text-lg md:text-xl dark:text-white">{edu.school}</h4>
+                    <span className="text-xs font-mono text-neutral-400 bg-neutral-100 dark:bg-neutral-900 px-2 py-1 rounded">{edu.period}</span>
+                  </div>
+                  <p className="text-neutral-800 dark:text-neutral-300 font-medium mb-2">{edu.degree} in {edu.field}</p>
+                  {edu.description && <p className="text-sm text-neutral-500 leading-relaxed">{edu.description}</p>}
                 </div>
               </RevealOnScroll>
             ))}

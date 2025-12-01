@@ -21,6 +21,11 @@ export default function App() {
     }
     return false;
   });
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   useEffect(() => {
     localStorage.setItem('darkMode', String(darkMode));
@@ -79,7 +84,7 @@ export default function App() {
         aria-label="Toggle Theme"
       >
         <span className="group-hover:scale-110 inline-block transition-transform">
-          {darkMode ? '☀️' : '🌙'}
+          {isMounted && (darkMode ? '☀️' : '🌙')}
         </span>
       </button>
     </div>
