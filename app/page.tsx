@@ -80,16 +80,6 @@ export default function App() {
       </main>
 
       <Footer />
-      
-      <button 
-        onClick={() => setDarkMode(!darkMode)}
-        className="fixed bottom-8 right-8 p-4 rounded-2xl bg-white dark:bg-neutral-800 shadow-lg hover:shadow-xl border-2 border-neutral-200 dark:border-neutral-700 z-50 hover:scale-105 active:scale-95 transition-all text-2xl cursor-none group"
-        aria-label="Toggle Theme"
-      >
-        <span className="group-hover:scale-110 inline-block transition-transform">
-          {isMounted && (darkMode ? '☀️' : '🌙')}
-        </span>
-      </button>
     </div>
   );
 }

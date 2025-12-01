@@ -17,11 +17,11 @@ export const PROJECTS: Project[] = [
     title: "FortuneConnect",
     company: "FortuneTech SMC.",
     year: "2024-2025",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1920",
+    image: "https://img.sanishtech.com/u/52a13283b838dc8d0f7c328672d58bf6.png",
     category: "Frontend Architecture",
     description: "Architected a high-performance financial dashboard handling real-time data for 10k+ active users. Implemented D3.js visualizations that reduced reporting time by 40% compared to the legacy system.",
-    stack: ["React", "TypeScript", "D3.js", "Tailwind", "Redux Toolkit"],
-    link: "#",
+    stack: ["React", "TypeScript", "Tailwind", "Redux Toolkit"],
+    link: "https://www.fortuneconnect.africa/",
     featured: true
   },
   {
@@ -32,7 +32,7 @@ export const PROJECTS: Project[] = [
     image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1920",
     category: "Industrial Web App",
     description: "Developed an IoT monitoring solution processing 500+ sensor events per second. Built a WebSocket-based alert system that decreased machine downtime response speed by 25%.",
-    stack: ["Next.js", "Node.js", "PostgreSQL", "Socket.io", "Docker"],
+    stack: ["Flutter", "PostgreSQL", "Odoo ERP", "WordPress"],
     link: "#",
     featured: true
   },
