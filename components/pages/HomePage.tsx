@@ -82,8 +82,8 @@ export const HomePage: React.FC<HomePageProps> = ({ setActivePage, onViewProject
         </div>
       </section>
 
-      <section className="py-24 md:py-32 px-6 max-w-6xl mx-auto grid lg:grid-cols-12 gap-12 lg:gap-16 border-t border-neutral-100 dark:border-neutral-900">
-        <div className="lg:col-span-5">
+      <section className="py-24 md:py-32 px-6 max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 border-t border-neutral-100 dark:border-neutral-900">
+        <div>
           <SectionHeading number="02">About Me</SectionHeading>
           <RevealOnScroll>
             <div className="prose prose-lg dark:prose-invert text-neutral-500">
@@ -120,46 +120,48 @@ export const HomePage: React.FC<HomePageProps> = ({ setActivePage, onViewProject
             </a>
           </RevealOnScroll>
         </div>
-        
-        <div className="lg:col-span-1"></div>
 
-        <div className="lg:col-span-6">
-          <RevealOnScroll>
-            <h3 className="text-xs font-bold uppercase tracking-widest text-neutral-400 mb-10">Career History</h3>
-          </RevealOnScroll>
-          <div className="space-y-6 mb-16">
-            {EXPERIENCE.map((job, index) => (
-              <RevealOnScroll key={index} delay={index * 100}>
-                <div className="group relative pl-8 border-l border-neutral-200 dark:border-neutral-800 hover:border-black dark:hover:border-white transition-colors duration-300">
-                  <div className="absolute -left-[5px] top-0 w-2.5 h-2.5 rounded-full bg-neutral-200 dark:bg-neutral-800 group-hover:bg-black dark:group-hover:bg-white transition-colors duration-300 shadow-sm"></div>
-                  <div className="flex justify-between items-start mb-2">
-                    <h4 className="font-bold text-lg md:text-xl dark:text-white">{job.company}</h4>
-                    <span className="text-xs font-mono text-neutral-400 bg-neutral-100 dark:bg-neutral-900 px-2 py-1 rounded">{job.period}</span>
+        <div>
+          <div className="mb-16">
+            <RevealOnScroll>
+              <h3 className="text-xs font-bold uppercase tracking-widest text-neutral-400 mb-10">Career History</h3>
+            </RevealOnScroll>
+            <div className="space-y-6">
+              {EXPERIENCE.map((job, index) => (
+                <RevealOnScroll key={index} delay={index * 100}>
+                  <div className="group relative pl-8 border-l border-neutral-200 dark:border-neutral-800 hover:border-black dark:hover:border-white transition-colors duration-300">
+                    <div className="absolute -left-[5px] top-0 w-2.5 h-2.5 rounded-full bg-neutral-200 dark:bg-neutral-800 group-hover:bg-black dark:group-hover:bg-white transition-colors duration-300 shadow-sm"></div>
+                    <div className="flex justify-between items-start mb-2">
+                      <h4 className="font-bold text-lg md:text-xl dark:text-white">{job.company}</h4>
+                      <span className="text-xs font-mono text-neutral-400 bg-neutral-100 dark:bg-neutral-900 px-2 py-1 rounded">{job.period}</span>
+                    </div>
+                    <p className="text-neutral-800 dark:text-neutral-300 font-medium mb-2">{job.role}</p>
+                    <p className="text-sm text-neutral-500 leading-relaxed">{job.description}</p>
                   </div>
-                  <p className="text-neutral-800 dark:text-neutral-300 font-medium mb-2">{job.role}</p>
-                  <p className="text-sm text-neutral-500 leading-relaxed">{job.description}</p>
-                </div>
-              </RevealOnScroll>
-            ))}
+                </RevealOnScroll>
+              ))}
+            </div>
           </div>
 
-          <RevealOnScroll>
-            <h3 className="text-xs font-bold uppercase tracking-widest text-neutral-400 mb-10">Education</h3>
-          </RevealOnScroll>
-          <div className="space-y-6">
-            {EDUCATION.map((edu, index) => (
-              <RevealOnScroll key={index} delay={index * 100}>
-                <div className="group relative pl-8 border-l border-neutral-200 dark:border-neutral-800 hover:border-black dark:hover:border-white transition-colors duration-300">
-                  <div className="absolute -left-[5px] top-0 w-2.5 h-2.5 rounded-full bg-neutral-200 dark:bg-neutral-800 group-hover:bg-black dark:group-hover:bg-white transition-colors duration-300 shadow-sm"></div>
-                  <div className="flex justify-between items-start mb-2">
-                    <h4 className="font-bold text-lg md:text-xl dark:text-white">{edu.school}</h4>
-                    <span className="text-xs font-mono text-neutral-400 bg-neutral-100 dark:bg-neutral-900 px-2 py-1 rounded">{edu.period}</span>
+          <div>
+            <RevealOnScroll>
+              <h3 className="text-xs font-bold uppercase tracking-widest text-neutral-400 mb-10">Education</h3>
+            </RevealOnScroll>
+            <div className="space-y-6">
+              {EDUCATION.map((edu, index) => (
+                <RevealOnScroll key={index} delay={index * 100}>
+                  <div className="group relative pl-8 border-l border-neutral-200 dark:border-neutral-800 hover:border-black dark:hover:border-white transition-colors duration-300">
+                    <div className="absolute -left-[5px] top-0 w-2.5 h-2.5 rounded-full bg-neutral-200 dark:bg-neutral-800 group-hover:bg-black dark:group-hover:bg-white transition-colors duration-300 shadow-sm"></div>
+                    <div className="flex justify-between items-start mb-2">
+                      <h4 className="font-bold text-lg md:text-xl dark:text-white">{edu.school}</h4>
+                      <span className="text-xs font-mono text-neutral-400 bg-neutral-100 dark:bg-neutral-900 px-2 py-1 rounded">{edu.period}</span>
+                    </div>
+                    <p className="text-neutral-800 dark:text-neutral-300 font-medium mb-2">{edu.degree} in {edu.field}</p>
+                    {edu.description && <p className="text-sm text-neutral-500 leading-relaxed">{edu.description}</p>}
                   </div>
-                  <p className="text-neutral-800 dark:text-neutral-300 font-medium mb-2">{edu.degree} in {edu.field}</p>
-                  {edu.description && <p className="text-sm text-neutral-500 leading-relaxed">{edu.description}</p>}
-                </div>
-              </RevealOnScroll>
-            ))}
+                </RevealOnScroll>
+              ))}
+            </div>
           </div>
         </div>
       </section>
