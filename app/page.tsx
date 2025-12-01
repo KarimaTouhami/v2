@@ -10,6 +10,8 @@ import { ProjectsPage } from '@/components/pages/ProjectsPage';
 import { StackPage } from '@/components/pages/StackPage';
 import { ContactPage } from '@/components/pages/ContactPage';
 import { ProjectDetailPage } from '@/components/pages/ProjectDetailPage';
+import { PrivacyPage } from '@/components/pages/PrivacyPage';
+import { ImprintPage } from '@/components/pages/ImprintPage';
 
 export default function App() {
   const [activePage, setActivePage] = useState('home');
@@ -63,6 +65,8 @@ export default function App() {
       case 'projects': return <ProjectsPage onViewProject={handleViewProject} />;
       case 'stack': return <StackPage />;
       case 'contact': return <ContactPage />;
+      case 'privacy': return <PrivacyPage />;
+      case 'imprint': return <ImprintPage />;
       default: return <HomePage setActivePage={handleNavChange} onViewProject={handleViewProject} />;
     }
   }, [activePage, selectedProject, handleNavChange, handleViewProject]);
@@ -79,7 +83,7 @@ export default function App() {
         {renderPage}
       </main>
 
-      <Footer />
+      <Footer setActivePage={handleNavChange} />
     </div>
   );
 }

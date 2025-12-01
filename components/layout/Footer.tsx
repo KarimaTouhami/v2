@@ -1,10 +1,15 @@
 import React from 'react';
-import { Github, Linkedin, Mail, ArrowRight } from 'lucide-react';
+import { Github, Linkedin, ArrowRight } from 'lucide-react';
+import { FaMedium } from 'react-icons/fa';
 import { RevealOnScroll } from '@/components/ui/RevealOnScroll';
 import { CopyEmailButton } from '@/components/ui/CopyEmailButton';
 import { SocialButton } from '@/components/ui/SocialButton';
 
-export const Footer: React.FC = () => (
+interface FooterProps {
+  setActivePage?: (page: string) => void;
+}
+
+export const Footer: React.FC<FooterProps> = ({ setActivePage }) => (
   <footer className="bg-neutral-50 dark:bg-black/40 pt-24 md:pt-32 pb-12 border-t border-neutral-200 dark:border-neutral-800 relative z-10">
     <div className="max-w-6xl mx-auto px-6">
       <RevealOnScroll>
@@ -22,9 +27,9 @@ export const Footer: React.FC = () => (
               karimatouhami246@gmail.com <ArrowRight className="group-hover:translate-x-2 transition-transform duration-300" size={32} />
             </a>
             <div className="flex gap-4">
-              <SocialButton icon={<Github size={20} />} label="GitHub" />
-              <SocialButton icon={<Linkedin size={20} />} label="LinkedIn" />
-              <SocialButton icon={<Mail size={20} />} label="Email" />
+              <SocialButton icon={<Github size={20} />} href="https://github.com/KarimaTouhami" label="GitHub" />
+              <SocialButton icon={<Linkedin size={20} />} href="https://linkedin.com/in/karimatouhami" label="LinkedIn" />
+              <SocialButton icon={<FaMedium size={20} />} href="https://medium.com/@karimatouhami" label="Medium" />
             </div>
           </div>
         </div>
@@ -33,8 +38,18 @@ export const Footer: React.FC = () => (
       <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-neutral-200 dark:border-neutral-900 text-sm text-neutral-500 gap-4">
         <p>© 2025 Karima Touhami. Crafted with precision.</p>
         <div className="flex gap-6">
-          <span className="cursor-pointer hover:text-black dark:hover:text-white transition-colors">Privacy</span>
-          <span className="cursor-pointer hover:text-black dark:hover:text-white transition-colors">Imprint</span>
+          <button 
+            onClick={() => setActivePage?.('privacy')}
+            className="cursor-pointer hover:text-black dark:hover:text-white transition-colors"
+          >
+            Privacy
+          </button>
+          <button 
+            onClick={() => setActivePage?.('imprint')}
+            className="cursor-pointer hover:text-black dark:hover:text-white transition-colors"
+          >
+            Imprint
+          </button>
         </div>
       </div>
     </div>
