@@ -7,7 +7,7 @@ export const CopyEmailButton: React.FC = () => {
   const [copied, setCopied] = useState(false);
   
   const handleCopy = () => {
-    navigator.clipboard.writeText("contact@karima.dev");
+    navigator.clipboard.writeText("karimatouhami246@gmail.com");
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -15,14 +15,14 @@ export const CopyEmailButton: React.FC = () => {
   return (
     <button 
       onClick={handleCopy}
-      className="group flex items-center gap-2 px-5 py-2.5 rounded-full bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-colors"
+      className="group flex items-center gap-3 px-6 py-3 rounded-xl bg-neutral-900 dark:bg-white text-white dark:text-black hover:scale-[1.02] active:scale-[0.98] transition-all shadow-lg font-medium"
       aria-label="Copy email address"
     >
-      <Mail size={18} className="text-neutral-600 dark:text-neutral-300" />
-      <span className="text-sm font-medium text-neutral-900 dark:text-white">
+      <Mail size={20} />
+      <span className="text-sm font-semibold">
         {copied ? "Copied!" : "Copy Email"}
       </span>
-      {copied ? <CheckCircle2 size={16} className="text-green-500" /> : <Copy size={16} className="text-neutral-400 opacity-0 group-hover:opacity-100 transition-opacity" />}
+      {copied ? <CheckCircle2 size={18} className="text-green-400" /> : <Copy size={18} className="opacity-70 group-hover:opacity-100 transition-opacity" />}
     </button>
   );
 };
