@@ -12,10 +12,10 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onViewProject }) => 
   usePageTitle('Projects');
   
   return (
-    <div className="pt-32 md:pt-40 pb-20 px-6 max-w-6xl mx-auto">
-      <RevealOnScroll className="mb-12 md:mb-16">
-        <h1 className="text-5xl md:text-7xl font-bold mb-6 font-inter">All Projects</h1>
-        <p className="text-lg md:text-xl text-neutral-500 max-w-2xl">
+    <div className="pt-32 md:pt-40 pb-24 px-6 max-w-6xl mx-auto">
+      <RevealOnScroll className="mb-16 md:mb-20">
+        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 font-inter text-neutral-900 dark:text-white">All Projects</h1>
+        <p className="text-lg md:text-xl text-neutral-500 dark:text-neutral-400 max-w-2xl leading-relaxed">
           A curated collection of web applications, tools, and experiments I&apos;ve built.
           Each represents a unique challenge and a new skill learned.
         </p>

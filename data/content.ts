@@ -9,12 +9,6 @@ export interface Experience {
   logo: string;
 }
 
-export interface Testimonial {
-  text: string;
-  author: string;
-  role: string;
-}
-
 export interface ApproachStep {
   title: string;
   desc: string;
@@ -47,19 +41,6 @@ export const EXPERIENCE: Experience[] = [
     period: "Jul 2023",
     description: "Optimized SQL queries for the inventory database, reducing slow query logs by 60%.",
     logo: "IM"
-  }
-];
-
-export const TESTIMONIALS: Testimonial[] = [
-  {
-    text: "Karima has an exceptional ability to translate complex requirements into clean, maintainable code. Her work on the dashboard UI was flawless.",
-    author: "Sarah J.",
-    role: "Senior PM @ FortuneTech"
-  },
-  {
-    text: "One of the most dedicated engineers I've mentored. She doesn't just write code; she thinks about the product and the user.",
-    author: "Ahmed B.",
-    role: "Tech Lead @ ALX"
   }
 ];
 

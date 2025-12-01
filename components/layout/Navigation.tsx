@@ -16,7 +16,7 @@ export const Navigation = React.memo<NavigationProps>(({ activePage, setActivePa
   const scrolled = scrollY > 20;
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled || isMenuOpen ? 'bg-white/90 dark:bg-neutral-950/90 backdrop-blur-xl shadow-lg border-b border-neutral-200/50 dark:border-neutral-800/50 py-3' : 'bg-transparent py-6'}`}>
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled || isMenuOpen ? 'bg-white/95 dark:bg-neutral-950/95 backdrop-blur-xl shadow-lg border-b border-neutral-200 dark:border-neutral-800 py-3' : 'bg-transparent py-6'}`}>
       <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
         <div 
           onClick={() => { setActivePage('home'); setIsMenuOpen(false); }}
@@ -32,7 +32,7 @@ export const Navigation = React.memo<NavigationProps>(({ activePage, setActivePa
         </div>
 
         <div className="hidden md:flex items-center gap-2">
-          <div className="flex items-center gap-1 p-1.5 rounded-full bg-neutral-100/50 dark:bg-neutral-900/50 backdrop-blur-sm border border-neutral-200 dark:border-neutral-800 mr-4">
+          <div className="flex items-center gap-1 p-1.5 rounded-full bg-neutral-100 dark:bg-neutral-900 backdrop-blur-sm border border-neutral-200 dark:border-neutral-800 mr-4">
             {NAV_LINKS.map((link) => (
               <button
                 key={link.id}

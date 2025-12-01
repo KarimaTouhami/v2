@@ -1,8 +1,8 @@
 import React from 'react';
-import { ArrowRight, Download, Quote } from 'lucide-react';
+import { ArrowRight, Download } from 'lucide-react';
 import { usePageTitle } from '@/hooks/usePageTitle';
 import { PROJECTS } from '@/data/projects';
-import { EXPERIENCE, TESTIMONIALS, APPROACH_STEPS } from '@/data/content';
+import { EXPERIENCE, APPROACH_STEPS } from '@/data/content';
 import { Project } from '@/data/projects';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { RevealOnScroll } from '@/components/ui/RevealOnScroll';
@@ -18,12 +18,12 @@ export const HomePage: React.FC<HomePageProps> = ({ setActivePage, onViewProject
   
   return (
     <div>
-      <section className="pt-32 md:pt-40 pb-20 px-6 max-w-6xl mx-auto min-h-[90vh] flex flex-col justify-center">
+      <section className="pt-32 md:pt-40 pb-24 px-6 max-w-6xl mx-auto min-h-[90vh] flex flex-col justify-center">
         <RevealOnScroll>
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-400 text-xs font-semibold uppercase tracking-wide mb-8 border border-green-100 dark:border-green-900/30">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+          <div className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-400 text-xs font-bold uppercase tracking-wider mb-10 border-2 border-green-200 dark:border-green-900/40 shadow-sm">
+            <span className="relative flex h-2.5 w-2.5">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
             </span>
             Available for new opportunities
           </div>
@@ -31,7 +31,7 @@ export const HomePage: React.FC<HomePageProps> = ({ setActivePage, onViewProject
         
         <RevealOnScroll delay={100}>
           <div className="relative">
-            <h1 className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-bold tracking-tight mb-8 leading-[1] text-neutral-900 dark:text-white font-inter">
+            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold tracking-tight mb-8 leading-none text-neutral-900 dark:text-white font-inter">
               I&apos;m Karima. <br />
               I build <span className="text-neutral-400 dark:text-neutral-600">scalable</span> <br />
               software solutions.
@@ -46,16 +46,16 @@ export const HomePage: React.FC<HomePageProps> = ({ setActivePage, onViewProject
         </RevealOnScroll>
 
         <RevealOnScroll delay={300}>
-          <div className="flex flex-col sm:flex-row gap-4 items-center">
+          <div className="flex flex-col sm:flex-row gap-4 items-start">
             <button 
               onClick={() => setActivePage('contact')}
-              className="w-full sm:w-auto px-8 py-4 bg-neutral-900 dark:bg-white text-white dark:text-black rounded-full font-bold text-lg hover:scale-105 transition-all flex items-center justify-center gap-2 shadow-xl shadow-neutral-200/50 dark:shadow-white/10 font-inter"
+              className="w-full sm:w-auto px-8 py-4 bg-neutral-900 dark:bg-white text-white dark:text-black rounded-full font-bold text-lg hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2 shadow-lg font-inter"
             >
-              Start a Project <ArrowRight size={20} />
+              Start a Project <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
             </button>
             <button 
               onClick={() => setActivePage('projects')}
-              className="w-full sm:w-auto px-8 py-4 bg-transparent text-neutral-900 dark:text-white rounded-full font-bold text-lg border border-neutral-200 dark:border-neutral-800 hover:bg-neutral-50 dark:hover:bg-neutral-900 transition-all font-inter"
+              className="w-full sm:w-auto px-8 py-4 bg-transparent text-neutral-900 dark:text-white rounded-full font-bold text-lg border-2 border-neutral-200 dark:border-neutral-700 hover:border-neutral-900 dark:hover:border-white hover:bg-neutral-50 dark:hover:bg-neutral-900 transition-all font-inter"
             >
               View Portfolio
             </button>
@@ -63,26 +63,26 @@ export const HomePage: React.FC<HomePageProps> = ({ setActivePage, onViewProject
         </RevealOnScroll>
       </section>
 
-      <section className="py-20 md:py-24 px-6 max-w-6xl mx-auto border-t border-neutral-100 dark:border-neutral-900">
-        <div className="flex justify-between items-end mb-12 md:mb-16">
+      <section className="py-24 md:py-32 px-6 max-w-6xl mx-auto border-t border-neutral-100 dark:border-neutral-900">
+        <div className="flex justify-between items-end mb-16 md:mb-20">
           <SectionHeading number="01">Selected Works</SectionHeading>
           <RevealOnScroll>
             <button 
               onClick={() => setActivePage('projects')}
-              className="group flex items-center gap-2 text-sm font-medium hover:text-neutral-600 dark:hover:text-neutral-400 transition-colors pb-2"
+              className="group flex items-center gap-2 text-sm font-semibold text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors pb-2"
             >
               View all projects <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
             </button>
           </RevealOnScroll>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
           {PROJECTS.slice(0, 4).map((project, index) => (
             <ProjectCard key={project.id} project={project} onClick={onViewProject} index={index} />
           ))}
         </div>
       </section>
 
-      <section className="py-20 md:py-24 px-6 max-w-6xl mx-auto grid lg:grid-cols-12 gap-16 border-t border-neutral-100 dark:border-neutral-900">
+      <section className="py-24 md:py-32 px-6 max-w-6xl mx-auto grid lg:grid-cols-12 gap-12 lg:gap-16 border-t border-neutral-100 dark:border-neutral-900">
         <div className="lg:col-span-5">
           <SectionHeading number="02">About Me</SectionHeading>
           <RevealOnScroll>
@@ -138,22 +138,6 @@ export const HomePage: React.FC<HomePageProps> = ({ setActivePage, onViewProject
               </RevealOnScroll>
             ))}
           </div>
-
-          <RevealOnScroll>
-            <h3 className="text-xs font-bold uppercase tracking-widest text-neutral-400 mb-8">What People Say</h3>
-            <div className="grid gap-6">
-              {TESTIMONIALS.map((t, i) => (
-                <div key={i} className="p-6 rounded-2xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-100 dark:border-neutral-800 relative">
-                  <Quote size={20} className="text-neutral-300 dark:text-neutral-700 mb-4" />
-                  <p className="text-neutral-600 dark:text-neutral-300 text-sm mb-4 leading-relaxed italic">&quot;{t.text}&quot;</p>
-                  <div>
-                    <p className="font-bold text-sm text-neutral-900 dark:text-white">{t.author}</p>
-                    <p className="text-xs text-neutral-500">{t.role}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </RevealOnScroll>
         </div>
       </section>
     </div>

@@ -55,8 +55,9 @@ export const CustomCursor: React.FC = () => {
   return (
     <div 
       ref={cursorRef}
-      className={`fixed top-0 left-0 pointer-events-none z-[9999] mix-blend-difference hidden md:block transition-opacity duration-300 ${isVisible ? 'opacity-100' : 'opacity-0'}`}
+      className={`fixed top-0 left-0 pointer-events-none z-50 mix-blend-difference hidden md:block transition-opacity duration-300 ${isVisible ? 'opacity-100' : 'opacity-0'}`}
       style={{ left: '-10px', top: '-10px', willChange: 'transform' }}
+      aria-hidden="true"
     >
       <div className={`relative flex items-center justify-center transition-all duration-300 ease-out ${isPointer ? 'scale-150' : 'scale-100'}`}>
         <div className={`w-5 h-5 bg-white rounded-full opacity-90 transition-all duration-300 ${isPointer ? 'w-16 h-16 opacity-30' : ''}`}></div>

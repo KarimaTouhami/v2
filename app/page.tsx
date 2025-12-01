@@ -14,14 +14,13 @@ import { ProjectDetailPage } from '@/components/pages/ProjectDetailPage';
 export default function App() {
   const [activePage, setActivePage] = useState('home');
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-  const [darkMode, setDarkMode] = useState(false); // Default to light mode
-
-  useEffect(() => {
+  const [darkMode, setDarkMode] = useState(() => {
     if (typeof window !== 'undefined') {
       const savedMode = localStorage.getItem('darkMode');
-      setDarkMode(savedMode === 'true');
+      return savedMode === 'true';
     }
-  }, []); // Run once on mount to load saved theme
+    return false;
+  });
 
   useEffect(() => {
     localStorage.setItem('darkMode', String(darkMode));
@@ -76,10 +75,12 @@ export default function App() {
       
       <button 
         onClick={() => setDarkMode(!darkMode)}
-        className="fixed bottom-6 right-6 p-4 rounded-full bg-white dark:bg-neutral-800 shadow-2xl border border-neutral-200 dark:border-neutral-700 z-50 hover:scale-110 active:scale-95 transition-all text-xl cursor-none"
+        className="fixed bottom-8 right-8 p-4 rounded-2xl bg-white dark:bg-neutral-800 shadow-lg hover:shadow-xl border-2 border-neutral-200 dark:border-neutral-700 z-50 hover:scale-105 active:scale-95 transition-all text-2xl cursor-none group"
         aria-label="Toggle Theme"
       >
-        {darkMode ? '☀️' : '🌙'}
+        <span className="group-hover:scale-110 inline-block transition-transform">
+          {darkMode ? '☀️' : '🌙'}
+        </span>
       </button>
     </div>
   );
