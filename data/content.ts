@@ -62,7 +62,7 @@ export const EDUCATION: Education[] = [
   {
     school: "SUPTEM",
     degree: "Bachelor's Degree",
-    field: "Software Engineering",
+    field: "Software and Decision-Making Engineering",
     period: "2021 - 2024",
     description: "Graduated with honors. Focused on full-stack development, algorithms, and software architecture patterns."
   },

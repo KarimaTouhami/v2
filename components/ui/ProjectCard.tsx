@@ -23,7 +23,7 @@ export const ProjectCard = React.memo<ProjectCardProps>(({ project, onClick, ind
           className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
         />
       </div>
-      <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6 md:p-8 text-white">
+      <div className="absolute inset-0 bg-linear-to-t from-black/95 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6 md:p-8 text-white">
         <div className="translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75 ease-out">
           <p className="text-green-400 font-mono text-xs mb-2 uppercase tracking-wider">{project.category}</p>
           <h3 className="text-xl md:text-2xl font-bold mb-2 font-inter">{project.title}</h3>
