@@ -73,7 +73,7 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({ project, o
         </div>
 
         <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-neutral-200 dark:border-neutral-800 animate-in slide-in-from-bottom-8 duration-1000 delay-200 fade-in fill-mode-both aspect-[16/10] order-1 lg:order-2">
-          <LazyImage src={project.image} alt={project.title} className="w-full h-full object-cover" />
+          <LazyImage src={project.image} alt={project.title} fill priority className="w-full h-full object-cover" />
         </div>
       </div>
 

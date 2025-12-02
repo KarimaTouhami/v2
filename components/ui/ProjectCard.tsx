@@ -19,7 +19,9 @@ export const ProjectCard = React.memo<ProjectCardProps>(({ project, onClick, ind
       <div className="aspect-video w-full overflow-hidden">
         <LazyImage 
           src={project.image} 
-          alt={project.title} 
+          alt={project.title}
+          fill
+          priority={index < 2}
           className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
         />
       </div>
