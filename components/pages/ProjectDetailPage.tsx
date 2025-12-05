@@ -92,9 +92,9 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({ project, o
         </div>
         <div className="p-6 md:p-8 bg-neutral-50 dark:bg-neutral-900 rounded-3xl border border-neutral-100 dark:border-neutral-800">
           <p className="text-xs text-neutral-400 uppercase tracking-wider mb-2">Status</p>
-          <div className="flex items-center gap-2 font-bold text-lg md:text-xl text-green-600">
-            <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-            Completed
+          <div className={`flex items-center gap-2 font-bold text-lg md:text-xl ${project.status === 'completed' ? 'text-green-600' : 'text-yellow-600'}`}>
+            <span className={`w-2 h-2 rounded-full animate-pulse ${project.status === 'completed' ? 'bg-green-500' : 'bg-yellow-500'}`}></span>
+            {project.status === 'completed' ? 'Completed' : 'Ongoing'}
           </div>
         </div>
       </div>
