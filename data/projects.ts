@@ -10,6 +10,7 @@ export interface Project {
   link: string;
   github: string;
   featured: boolean;
+  status?: 'completed' | 'ongoing';
 }
 
 export const PROJECTS: Project[] = [
@@ -24,7 +25,8 @@ export const PROJECTS: Project[] = [
     stack: ["React", "TypeScript", "Tailwind", "Redux Toolkit"],
     link: "https://www.fortuneconnect.africa/",
     github: "private",
-    featured: true
+    featured: true,
+    status: 'completed'
   },
   {
     id: 2,
@@ -37,7 +39,8 @@ export const PROJECTS: Project[] = [
     stack: ["Flutter", "PostgreSQL", "Odoo ERP", "WordPress"],
     link: "https://italiamachines.com/",
     github: "private",
-    featured: false
+    featured: false,
+    status: 'completed'
   },
   {
     id: 3,
@@ -50,7 +53,8 @@ export const PROJECTS: Project[] = [
     stack: ["React", "Appwrite", "TypeScript", "Shadcn UI", "Tailwind CSS"],
     link: "https://the-tea-is-gone.vercel.app/",
     github: "https://github.com/KarimaTouhami/the-tea-is-gone",
-    featured: false
+    featured: false,
+    status: 'completed'
   },
   {
     id: 4,
@@ -63,7 +67,8 @@ export const PROJECTS: Project[] = [
     stack: ["Next.js", "Supabase", "Sahdcn UI", "Tailwind CSS"],
     link: "https://dentist-website-murex.vercel.app/",
     github: "https://github.com/KarimaTouhami/Dantex",
-    featured: false
+    featured: false,
+    status: 'completed'
   },
   {
     id: 5,
@@ -76,6 +81,21 @@ export const PROJECTS: Project[] = [
     stack: ["Next.js", "GitHub API", "Tailwind CSS"],
     link: "https://github-compass.vercel.app/",
     github: "https://github.com/KarimaTouhami/github-compass",
-    featured: true
+    featured: true,
+    status: 'completed'
+  },
+  {
+    id: 6,
+    title: "Shelf",
+    company: "Personal Project",
+    year: "2025",
+    image: "/projects/shelf-app.webp",
+    category: "Social Discovery Platform",
+    description: "A visual discovery platform where users curate their digital universe through books, music, and movies. Built with a decoupled architecture (Next.js frontend + FastAPI) featuring a highly interactive 'bento-grid' UI and real-time social activity feeds.",
+    stack: ["Next.js", "FastAPI", "Tailwind CSS", "Framer Motion", "Spotify API", "Google Books API", "TMDB API"],
+    link: "https://shelf-app-demo.vercel.app/",
+    github: "private",
+    featured: true,
+    status: 'ongoing'
   }
 ];
