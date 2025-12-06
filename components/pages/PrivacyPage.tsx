@@ -9,7 +9,7 @@ export const PrivacyPage: React.FC = () => {
     <div className="pt-32 pb-24 px-6 max-w-4xl mx-auto min-h-screen">
       <RevealOnScroll>
         <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight font-inter">Privacy Policy</h1>
-        <p className="text-neutral-500 text-lg mb-12">Last updated: December 1, 2025</p>
+        <p className="text-neutral-500 text-lg mb-12">Last updated: December 6, 2025</p>
       </RevealOnScroll>
 
       <div className="prose prose-lg dark:prose-invert max-w-none">
