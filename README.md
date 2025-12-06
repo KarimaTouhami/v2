@@ -30,7 +30,7 @@ npm run dev
 
 then yeet yourself over to [http://localhost:3000](http://localhost:3000) 🎉
 
-## 📁 project structure (organized queen behavior)
+## 📁 project structure
 
 ```
 v2/
