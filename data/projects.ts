@@ -3,6 +3,7 @@ export interface Project {
   title: string;
   company: string;
   year: string;
+  role: string;
   image: string;
   category: string;
   description: string;
@@ -19,6 +20,7 @@ export const PROJECTS: Project[] = [
     title: "FortuneConnect",
     company: "FortuneTech SMC.",
     year: "2024-2025",
+    role: "Lead Frontend Engineer",
     image: "/projects/fortuneconnect-admin-dashboard.webp",
     category: "Frontend Architecture",
     description: "Architected a high-performance financial dashboard handling real-time data for 10k+ active users. Implemented D3.js visualizations that reduced reporting time by 40% compared to the legacy system.",
@@ -33,6 +35,7 @@ export const PROJECTS: Project[] = [
     title: "Shelf",
     company: "Personal Project",
     year: "2025",
+    role: "Full Stack Developer",
     image: "/projects/shelf-app.webp",
     category: "Social Discovery Platform",
     description: "A visual discovery platform where users curate their digital universe through books, music, and movies. Built with a decoupled architecture (Next.js frontend + FastAPI) featuring a highly interactive 'bento-grid' UI and real-time social activity feeds.",
@@ -47,6 +50,7 @@ export const PROJECTS: Project[] = [
     title: "IMachines E-commerce App",
     company: "ItaliaMachines",
     year: "2023",
+    role: "Full Stack Developer intern",
     image: "/projects/imachines-landing-page.webp",
     category: "Industrial Web App",
     description: "Helped develop an e-commerce platform for industrial machinery, integrating Odoo ERP for seamless inventory and order management, enhancing user experience and operational efficiency.",
@@ -61,6 +65,7 @@ export const PROJECTS: Project[] = [
     title: "Dantex",
     company: "Personal Project",
     year: "2025",
+    role: "Front end Developer",
     image: "/projects/dantex-landing-page.webp",
     category: "Dental Clinic Website",
     description: "Built the landing page for a dental clinic management SaaS, focusing on responsive design and user experience to attract potential clients.",
@@ -75,6 +80,7 @@ export const PROJECTS: Project[] = [
     title: "The Tea is Gone",
     company: "ALX Africa",
     year: "2024",
+    role: "Full Stack Developer",
     image: "/projects/the-tea-is-gone-home-page.webp",
     category: "Social Media App",
     description: "Full-stack social media app enabling users to share tea experiences. Implemented real-time chat and notifications using Appwrite.",
@@ -89,6 +95,7 @@ export const PROJECTS: Project[] = [
     title: "GitHub Compass",
     company: "Open Source",
     year: "2025",
+    role: "Full Stack Developer",
     image: "/projects/github-compass.webp",
     category: "DevTool",
     description: "A GitHub validator I built for recruiters to separate a developer's real contributions from tutorials \"noise\"",
