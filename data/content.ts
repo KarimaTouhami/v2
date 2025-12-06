@@ -6,7 +6,6 @@ export interface Experience {
   role: string;
   period: string;
   description: string;
-  logo: string;
 }
 
 export interface ApproachStep {
@@ -31,24 +30,21 @@ export interface StackCategory {
 export const EXPERIENCE: Experience[] = [
   {
     company: "FortuneTech",
-    role: "Frontend Developer",
+    role: "Product Engineer",
     period: "2024 - Present",
-    description: "Spearheading the migration of the client portal to Next.js, resulting in a 3x improvement in SEO and load times.",
-    logo: "FT"
+    description: "Spearheading the development of FortuneConnect, a financial dashboard serving 2k+ users with real-time data visualization and insights."
   },
   {
     company: "SUPTEM",
     role: "Web Development Intern",
     period: "Sep 2024",
-    description: "Collaborated with a team of 4 to redesign the university portal, ensuring WCAG 2.1 accessibility compliance.",
-    logo: "S"
+    description: "Collaborated with a team of 4 to redesign the university portal, ensuring WCAG 2.1 accessibility compliance."
   },
   {
     company: "Italia Machines",
     role: "Software Developer Intern",
     period: "Jul 2023",
-    description: "Optimized SQL queries for the inventory database, reducing slow query logs by 60%.",
-    logo: "IM"
+    description: "Optimized SQL queries for the inventory database, reducing slow query logs by 60%."
   }
 ];
 

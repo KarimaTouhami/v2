@@ -23,7 +23,7 @@ export const Footer: React.FC<FooterProps> = ({ setActivePage }) => (
             <CopyEmailButton />
           </div>
           <div className="flex flex-col md:items-end justify-center gap-8">
-            <a href="mailto:karimatouhami246@gmail.com" className="text-2xl md:text-3xl font-medium hover:text-neutral-600 dark:hover:text-neutral-400 transition-colors flex items-center gap-4 group font-inter break-all">
+            <a href="mailto:karimatouhami246@gmail.com" className="text-xl md:text-3xl font-medium hover:text-neutral-600 dark:hover:text-neutral-400 transition-colors flex items-center gap-4 group font-inter break-all">
               karimatouhami246@gmail.com <ArrowRight className="group-hover:translate-x-2 transition-transform duration-300" size={32} />
             </a>
             <div className="flex gap-4">

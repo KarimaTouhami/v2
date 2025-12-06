@@ -64,7 +64,7 @@ export const HomePage: React.FC<HomePageProps> = ({ setActivePage, onViewProject
       </section>
 
       <section className="py-24 md:py-32 px-6 max-w-6xl mx-auto border-t border-neutral-100 dark:border-neutral-900">
-        <div className="flex justify-between items-center mb-16 md:mb-20">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-16 md:mb-20">
           <SectionHeading number="01">Selected Works</SectionHeading>
           <RevealOnScroll>
             <button 
