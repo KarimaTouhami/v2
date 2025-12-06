@@ -30,6 +30,20 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 2,
+    title: "Shelf",
+    company: "Personal Project",
+    year: "2025",
+    image: "/projects/shelf-app.webp",
+    category: "Social Discovery Platform",
+    description: "A visual discovery platform where users curate their digital universe through books, music, and movies. Built with a decoupled architecture (Next.js frontend + FastAPI) featuring a highly interactive 'bento-grid' UI and real-time social activity feeds.",
+    stack: ["Next.js", "FastAPI", "Tailwind CSS", "Framer Motion", "Spotify API", "Google Books API", "TMDB API"],
+    link: "https://shelf-app-v1.vercel.app/",
+    github: "private",
+    featured: true,
+    status: 'ongoing'
+  },
+  {
+    id: 3,
     title: "IMachines E-commerce App",
     company: "ItaliaMachines",
     year: "2023",
@@ -39,20 +53,6 @@ export const PROJECTS: Project[] = [
     stack: ["Flutter", "PostgreSQL", "Odoo ERP", "WordPress"],
     link: "https://italiamachines.com/",
     github: "private",
-    featured: false,
-    status: 'completed'
-  },
-  {
-    id: 3,
-    title: "The Tea is Gone",
-    company: "ALX Africa",
-    year: "2024",
-    image: "/projects/the-tea-is-gone-home-page.webp",
-    category: "Social Media App",
-    description: "Full-stack social media app enabling users to share tea experiences. Implemented real-time chat and notifications using Appwrite.",
-    stack: ["React", "Appwrite", "TypeScript", "Shadcn UI", "Tailwind CSS"],
-    link: "https://the-tea-is-gone.vercel.app/",
-    github: "https://github.com/KarimaTouhami/the-tea-is-gone",
     featured: false,
     status: 'completed'
   },
@@ -72,6 +72,20 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 5,
+    title: "The Tea is Gone",
+    company: "ALX Africa",
+    year: "2024",
+    image: "/projects/the-tea-is-gone-home-page.webp",
+    category: "Social Media App",
+    description: "Full-stack social media app enabling users to share tea experiences. Implemented real-time chat and notifications using Appwrite.",
+    stack: ["React", "Appwrite", "TypeScript", "Shadcn UI", "Tailwind CSS"],
+    link: "https://the-tea-is-gone.vercel.app/",
+    github: "https://github.com/KarimaTouhami/the-tea-is-gone",
+    featured: false,
+    status: 'completed'
+  },
+  {
+    id: 6,
     title: "GitHub Compass",
     company: "Open Source",
     year: "2025",
@@ -83,19 +97,5 @@ export const PROJECTS: Project[] = [
     github: "https://github.com/KarimaTouhami/github-compass",
     featured: true,
     status: 'completed'
-  },
-  {
-    id: 6,
-    title: "Shelf",
-    company: "Personal Project",
-    year: "2025",
-    image: "/projects/shelf-app.webp",
-    category: "Social Discovery Platform",
-    description: "A visual discovery platform where users curate their digital universe through books, music, and movies. Built with a decoupled architecture (Next.js frontend + FastAPI) featuring a highly interactive 'bento-grid' UI and real-time social activity feeds.",
-    stack: ["Next.js", "FastAPI", "Tailwind CSS", "Framer Motion", "Spotify API", "Google Books API", "TMDB API"],
-    link: "https://shelf-app-demo.vercel.app/",
-    github: "private",
-    featured: true,
-    status: 'ongoing'
   }
 ];
