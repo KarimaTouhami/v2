@@ -49,7 +49,7 @@ export const PROJECTS: Project[] = [
     year: "2023",
     image: "/projects/imachines-landing-page.webp",
     category: "Industrial Web App",
-    description: "Developed an IoT monitoring solution processing 500+ sensor events per second. Built a WebSocket-based alert system that decreased machine downtime response speed by 25%.",
+    description: "Helped develop an e-commerce platform for industrial machinery, integrating Odoo ERP for seamless inventory and order management, enhancing user experience and operational efficiency.",
     stack: ["Flutter", "PostgreSQL", "Odoo ERP", "WordPress"],
     link: "https://italiamachines.com/",
     github: "private",
