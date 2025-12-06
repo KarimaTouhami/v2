@@ -16,7 +16,7 @@ export const ImprintPage: React.FC = () => {
       <div className="prose prose-lg dark:prose-invert max-w-none">
         <RevealOnScroll delay={100}>
           <section className="mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold mb-6 text-neutral-900 dark:text-white">Information according to § 5 TMG</h2>
+            <h2 className="text-2xl md:text-3xl font-bold mb-6 text-neutral-900 dark:text-white">Contact Information</h2>
             <div className="bg-neutral-50 dark:bg-neutral-900 rounded-2xl p-8 border border-neutral-200 dark:border-neutral-800">
               <h3 className="text-xl font-bold mb-4 text-neutral-900 dark:text-white">Karima Touhami</h3>
               <p className="text-neutral-600 dark:text-neutral-400 mb-2">Software Development Engineer</p>
@@ -45,7 +45,7 @@ export const ImprintPage: React.FC = () => {
           <section className="mb-12">
             <h2 className="text-2xl md:text-3xl font-bold mb-4 text-neutral-900 dark:text-white">Responsible for Content</h2>
             <p className="text-neutral-600 dark:text-neutral-400 leading-relaxed">
-              Karima Touhami is responsible for all content on this website according to § 55 Abs. 2 RStV.
+              Karima Touhami is responsible for all content on this website.
             </p>
           </section>
         </RevealOnScroll>
@@ -56,12 +56,12 @@ export const ImprintPage: React.FC = () => {
             
             <h3 className="text-xl font-bold mb-3 text-neutral-900 dark:text-white">Liability for Content</h3>
             <p className="text-neutral-600 dark:text-neutral-400 leading-relaxed mb-6">
-              The content of this website has been created with the utmost care. However, I cannot guarantee the accuracy, completeness, or timeliness of the content. As a service provider, I am responsible for my own content on these pages according to general law. However, I am not obligated to monitor transmitted or stored third-party information or to investigate circumstances that indicate illegal activity.
+              The content of this website has been created with the utmost care. However, I cannot guarantee the accuracy, completeness, or timeliness of the content. I am responsible for my own content on these pages. However, I am not obligated to monitor transmitted or stored third-party information or to investigate circumstances that indicate illegal activity.
             </p>
 
             <h3 className="text-xl font-bold mb-3 text-neutral-900 dark:text-white">Liability for Links</h3>
             <p className="text-neutral-600 dark:text-neutral-400 leading-relaxed mb-6">
-              This website contains links to external websites over which I have no control. Therefore, I cannot accept any liability for this external content. The respective provider or operator of the pages is always responsible for the content of the linked pages.
+              This website contains links to external websites over which I have no control. Therefore, I cannot accept any liability for this external content. The respective provider or operator of the linked pages is always responsible for the content of the linked pages. The linked pages were checked for possible legal violations at the time of linking. Illegal content was not recognizable at the time of linking. However, permanent monitoring of the content of linked pages is unreasonable without concrete evidence of a legal violation.
             </p>
 
             <h3 className="text-xl font-bold mb-3 text-neutral-900 dark:text-white">Copyright</h3>
@@ -82,18 +82,16 @@ export const ImprintPage: React.FC = () => {
 
         <RevealOnScroll delay={500}>
           <section className="mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold mb-4 text-neutral-900 dark:text-white">Dispute Resolution</h2>
+            <h2 className="text-2xl md:text-3xl font-bold mb-4 text-neutral-900 dark:text-white">Contact</h2>
             <p className="text-neutral-600 dark:text-neutral-400 leading-relaxed">
-              The European Commission provides a platform for online dispute resolution (ODR):{' '}
+              For any questions, concerns, or inquiries regarding this website or its content, please contact me via email at{' '}
               <a 
-                href="https://ec.europa.eu/consumers/odr" 
-                target="_blank" 
-                rel="noopener noreferrer"
+                href="mailto:karimatouhami246@gmail.com"
                 className="text-neutral-900 dark:text-white font-medium hover:underline"
               >
-                https://ec.europa.eu/consumers/odr
+                karimatouhami246@gmail.com
               </a>
-              . I am not willing or obliged to participate in dispute resolution proceedings before a consumer arbitration board.
+              .
             </p>
           </section>
         </RevealOnScroll>
