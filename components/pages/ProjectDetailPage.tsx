@@ -88,7 +88,7 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({ project, o
         </div>
         <div className="p-6 md:p-8 bg-neutral-50 dark:bg-neutral-900 rounded-3xl border border-neutral-100 dark:border-neutral-800">
           <p className="text-xs text-neutral-400 uppercase tracking-wider mb-2">Role</p>
-          <p className="font-bold text-lg md:text-xl">Lead Dev</p>
+          <p className="font-bold text-lg md:text-xl">{project.role}</p>
         </div>
         <div className="p-6 md:p-8 bg-neutral-50 dark:bg-neutral-900 rounded-3xl border border-neutral-100 dark:border-neutral-800">
           <p className="text-xs text-neutral-400 uppercase tracking-wider mb-2">Status</p>
