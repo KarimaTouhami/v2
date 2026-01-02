@@ -18,7 +18,7 @@ export const HomePage: React.FC<HomePageProps> = ({ setActivePage, onViewProject
   
   return (
     <div>
-      <section className="pt-32 md:pt-40 pb-24 px-6 max-w-6xl mx-auto min-h-[90vh] flex flex-col justify-center">
+      <section className="pt-32 md:pt-40 pb-24 px-6 max-w-4xl mx-auto min-h-[90vh] flex flex-col justify-center">
         <RevealOnScroll>
           <div className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-400 text-xs font-bold uppercase tracking-wider mb-10 border-2 border-green-200 dark:border-green-900/40 shadow-sm">
             <span className="relative flex h-2.5 w-2.5">
@@ -31,7 +31,7 @@ export const HomePage: React.FC<HomePageProps> = ({ setActivePage, onViewProject
         
         <RevealOnScroll delay={100}>
           <div className="relative">
-            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-7xl font-bold tracking-tight mb-8 leading-none text-neutral-900 dark:text-white font-inter">
+            <h1 className="text-5xl sm:text-4xl md:text-7xl lg:text-8xl xl:text-7xl font-bold tracking-tight mb-8 leading-none text-neutral-900 dark:text-white font-inter">
               I&apos;m Karima. <br />
               I build <span className="text-neutral-400 dark:text-neutral-600">scalable</span> <br />
               software solutions.
@@ -63,7 +63,7 @@ export const HomePage: React.FC<HomePageProps> = ({ setActivePage, onViewProject
         </RevealOnScroll>
       </section>
 
-      <section className="py-24 md:py-32 px-6 max-w-6xl mx-auto border-t border-neutral-100 dark:border-neutral-900">
+      <section className="py-24 md:py-32 px-6 max-w-4xl mx-auto border-t border-neutral-100 dark:border-neutral-900">
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-16 md:mb-20">
           <SectionHeading number="01">Selected Works</SectionHeading>
           <RevealOnScroll>
@@ -82,7 +82,7 @@ export const HomePage: React.FC<HomePageProps> = ({ setActivePage, onViewProject
         </div>
       </section>
 
-      <section className="py-24 md:py-32 px-6 max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 border-t border-neutral-100 dark:border-neutral-900">
+      <section className="py-24 md:py-32 px-6 max-w-4xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 border-t border-neutral-100 dark:border-neutral-900">
         <div>
           <SectionHeading number="02">About Me</SectionHeading>
           <RevealOnScroll>
