@@ -18,7 +18,7 @@ export const HomePage: React.FC<HomePageProps> = ({ setActivePage, onViewProject
   
   return (
     <div>
-      <section className="pt-32 md:pt-40 pb-24 px-6 max-w-4xl mx-auto min-h-[90vh] flex flex-col justify-center">
+      <section className="pt-32 md:pt-40 pb-24 px-6 max-w-5xl mx-auto min-h-[90vh] flex flex-col justify-center">
         <RevealOnScroll>
           <div className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-400 text-xs font-bold uppercase tracking-wider mb-10 border-2 border-green-200 dark:border-green-900/40 shadow-sm">
             <span className="relative flex h-2.5 w-2.5">
