@@ -75,12 +75,12 @@ export const STACK_CATEGORIES: StackCategory[] = [
   {
     title: "Core Languages",
     icon: React.createElement(Terminal, { size: 20 }),
-    skills: ["JavaScript (ES6+)", "TypeScript", "Python", "HTML5/CSS3", "SQL"]
+    skills: ["JavaScript (ES6+)", "TypeScript", "Python", "PHP", "HTML5/CSS3", "SQL"]
   },
   {
     title: "Frontend Ecosystem",
     icon: React.createElement(Layout, { size: 20 }),
-    skills: ["React", "Next.js", "Vue.js", "Tailwind CSS", "Redux", "Framer Motion"]
+    skills: ["React", "Next.js", "Vue.js", "Tailwind CSS", "Symfony 5", "Framer Motion"]
   },
   {
     title: "Backend & DevOps",
