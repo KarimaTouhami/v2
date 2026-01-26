@@ -32,21 +32,6 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 2,
-    title: "Shelf",
-    company: "Personal Project",
-    year: "2025",
-    role: "Full Stack Developer",
-    image: "/projects/shelf-app.webp",
-    category: "Social Discovery Platform",
-    description: "A visual discovery platform where users curate their digital universe through books, music, and movies. Built with a decoupled architecture (Next.js frontend + FastAPI) featuring a highly interactive 'bento-grid' UI and real-time social activity feeds.",
-    stack: ["Next.js", "FastAPI", "Tailwind CSS", "Framer Motion", "Spotify API", "Google Books API", "TMDB API"],
-    link: "https://shelf-app-v1.vercel.app/",
-    github: "private",
-    featured: true,
-    status: 'ongoing'
-  },
-  {
-    id: 3,
     title: "IMachines E-commerce App",
     company: "ItaliaMachines",
     year: "2023",
@@ -61,7 +46,7 @@ export const PROJECTS: Project[] = [
     status: 'completed'
   },
   {
-    id: 4,
+    id: 3,
     title: "Dantex",
     company: "Personal Project",
     year: "2025",
@@ -76,7 +61,7 @@ export const PROJECTS: Project[] = [
     status: 'completed'
   },
   {
-    id: 5,
+    id: 4,
     title: "The Tea is Gone",
     company: "ALX Africa",
     year: "2024",
@@ -91,7 +76,7 @@ export const PROJECTS: Project[] = [
     status: 'completed'
   },
   {
-    id: 6,
+    id: 5,
     title: "GitHub Compass",
     company: "Open Source",
     year: "2025",
