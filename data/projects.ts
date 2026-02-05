@@ -5,6 +5,7 @@ export interface Project {
   year: string;
   role: string;
   image: string;
+  imageAlt?: string;
   category: string;
   description: string;
   stack: string[];
@@ -88,6 +89,21 @@ export const PROJECTS: Project[] = [
     link: "https://github-compass.vercel.app/",
     github: "https://github.com/KarimaTouhami/github-compass",
     featured: true,
+    status: 'completed'
+  },
+  {
+    id: 6,
+    title: "Send It To Pluto",
+    company: "Personal Project",
+    year: "2026",
+    role: "Full Stack Developer",
+    image: "/projects/send-to-pluto-app.webp",
+    category: "Testing SMTP Server",
+    description: "A tool to test SMTP servers by sending emails to a fake inbox, helping developers debug email functionality without spamming real inboxes.",
+    stack: ["PHP Mailer", "SMTP", "HTML", "CSS"],
+    link: "https://send-it-to-pluto.vercel.app/",
+    github: "https://github.com/KarimaTouhami/send-it-to-pluto",
+    featured: false,
     status: 'completed'
   }
 ];
