@@ -4,6 +4,7 @@ import { Project } from '@/data/projects';
 import { LazyImage } from '@/components/ui/LazyImage';
 import { usePageTitle } from '@/hooks/usePageTitle';
 import { PrivateRepoModal } from '@/components/ui/PrivateRepoModal';
+import { NotHostedModal } from '@/components/ui/NotHosted';
 
 interface ProjectDetailPageProps {
   project: Project;
@@ -13,6 +14,7 @@ interface ProjectDetailPageProps {
 export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({ project, onBack }) => {
   usePageTitle(project.title);
   const [showPrivateModal, setShowPrivateModal] = useState(false);
+  const [showNotHostedModal, setShowNotHostedModal] = useState(false);
 
   const handleGithubClick = (e: React.MouseEvent) => {
     if (project.github === '#' || project.github === 'private') {
@@ -20,10 +22,18 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({ project, o
       setShowPrivateModal(true);
     }
   };
+
+  const handleLiveSiteClick = (e: React.MouseEvent) => {
+    if (project.link === 'not-hosted') {
+      e.preventDefault();
+      setShowNotHostedModal(true);
+    }
+  };
   
   return (
     <div className="pt-28 min-h-screen max-w-6xl mx-auto px-6">
       <PrivateRepoModal isOpen={showPrivateModal} onClose={() => setShowPrivateModal(false)} />
+      <NotHostedModal isOpen={showNotHostedModal} onClose={() => setShowNotHostedModal(false)} />
       <button 
         onClick={onBack}
         className="group flex items-center gap-2 text-sm font-medium text-neutral-500 hover:text-black dark:hover:text-white mb-8 md:mb-12 transition-colors"
@@ -48,7 +58,11 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({ project, o
           </div>
           
           <div className="flex flex-col sm:flex-row gap-4 mb-12">
-            <a href={project.link} className="px-8 py-4 bg-black dark:bg-white text-white dark:text-black rounded-full font-bold hover:opacity-90 transition-all flex items-center justify-center gap-2 hover:gap-4 hover:shadow-lg hover:shadow-neutral-500/20 font-inter text-center">
+            <a 
+              href={project.link} 
+              onClick={handleLiveSiteClick}
+              className="px-8 py-4 bg-black dark:bg-white text-white dark:text-black rounded-full font-bold hover:opacity-90 transition-all flex items-center justify-center gap-2 hover:gap-4 hover:shadow-lg hover:shadow-neutral-500/20 font-inter text-center cursor-pointer"
+            >
               View Live Site <ExternalLink size={18} />
             </a>
             <a 

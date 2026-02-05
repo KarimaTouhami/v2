@@ -101,7 +101,7 @@ export const PROJECTS: Project[] = [
     category: "Testing SMTP Server",
     description: "A tool to test SMTP servers by sending emails to a fake inbox, helping developers debug email functionality without spamming real inboxes.",
     stack: ["PHP Mailer", "SMTP", "HTML", "CSS"],
-    link: "https://send-it-to-pluto.vercel.app/",
+    link: "not-hosted",
     github: "https://github.com/KarimaTouhami/send-it-to-pluto",
     featured: false,
     status: 'completed'
