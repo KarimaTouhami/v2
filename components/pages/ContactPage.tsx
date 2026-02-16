@@ -2,6 +2,7 @@ import React from 'react';
 import { Mail, Linkedin, Github, MapPin } from 'lucide-react';
 import { usePageTitle } from '@/hooks/usePageTitle';
 import { RevealOnScroll } from '@/components/ui/RevealOnScroll';
+import { GitHubCalendar } from '@/components/ui/GitHubCalendar';
 
 export const ContactPage: React.FC = () => {
   usePageTitle('Contact');
@@ -80,6 +81,12 @@ export const ContactPage: React.FC = () => {
                 Available for new projects
             </div>
           </div>
+        </div>
+      </RevealOnScroll>
+
+      <RevealOnScroll delay={0.2}>
+        <div className="mt-20">
+          <GitHubCalendar username="KarimaTouhami" />
         </div>
       </RevealOnScroll>
     </div>
