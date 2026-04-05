@@ -5,6 +5,8 @@ export interface Project {
   year: string;
   role: string;
   image: string;
+  diffImage?: string;
+  diffImageAlt?: string;
   imageAlt?: string;
   category: string;
   description: string;
@@ -104,6 +106,23 @@ export const PROJECTS: Project[] = [
     link: "not-hosted",
     github: "https://github.com/KarimaTouhami/send-it-to-pluto",
     featured: false,
+    status: 'completed'
+  },
+  {
+    id: 7,
+    title: "Artemis",
+    company: "Personal Project",
+    year: "2026",
+    role: "Full Stack engineer",
+    image: "/projects/artemis1.png",
+    diffImage: "/projects/artemis2.png",
+    diffImageAlt: "Artemis diff view",
+    category: "Text Editor",
+    description: "Artemis is a Real-time C-to-Assembly development tool for learning compiler behavior and systems programming.",
+    stack: ["Rust", "GCC", "Ratatui"],
+    link: "not-hosted",
+    github: "https://github.com/KarimaTouhami/artemis",
+    featured: true,
     status: 'completed'
   }
 ];

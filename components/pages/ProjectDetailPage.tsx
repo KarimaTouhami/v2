@@ -15,6 +15,9 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({ project, o
   usePageTitle(project.title);
   const [showPrivateModal, setShowPrivateModal] = useState(false);
   const [showNotHostedModal, setShowNotHostedModal] = useState(false);
+  const [diffPosition, setDiffPosition] = useState(50);
+  const isArtemisProject = project.title.toLowerCase() === 'artemis';
+  const showArtemisDiff = isArtemisProject && Boolean(project.diffImage);
 
   const handleGithubClick = (e: React.MouseEvent) => {
     if (project.github === '#' || project.github === 'private') {
@@ -86,8 +89,53 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({ project, o
           </div>
         </div>
 
-        <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-neutral-200 dark:border-neutral-800 animate-in slide-in-from-bottom-8 duration-1000 delay-200 fade-in fill-mode-both aspect-[16/10] order-1 lg:order-2">
-          <LazyImage src={project.image} alt={project.title} fill priority className="w-full h-full object-cover" />
+        <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-neutral-200 dark:border-neutral-800 animate-in slide-in-from-bottom-8 duration-1000 delay-200 fade-in fill-mode-both aspect-16/10 order-1 lg:order-2">
+          <LazyImage
+            src={project.image}
+            alt={project.imageAlt || `${project.title} base image`}
+            fill
+            priority
+            className="w-full h-full object-cover"
+          />
+
+          {showArtemisDiff && (
+            <>
+              <div
+                className="absolute inset-0"
+                style={{ clipPath: `inset(0 ${100 - diffPosition}% 0 0)` }}
+              >
+                <LazyImage
+                  src={project.diffImage!}
+                  alt={project.diffImageAlt || `${project.title} diff image`}
+                  fill
+                  className="w-full h-full object-cover"
+                />
+              </div>
+
+              <div className="absolute top-3 left-3 z-20 rounded-full bg-black/70 text-white px-3 py-1 text-xs font-semibold uppercase tracking-wider">
+                Text editor
+              </div>
+              <div className="absolute top-3 right-3 z-20 rounded-full bg-black/70 text-white px-3 py-1 text-xs font-semibold uppercase tracking-wider">
+                Intro
+              </div>
+
+              <div className="absolute inset-y-0 z-20 w-px bg-white/90" style={{ left: `${diffPosition}%` }} />
+              <div
+                className="absolute z-20 top-1/2 -translate-y-1/2 -translate-x-1/2 h-9 w-9 rounded-full border-2 border-white bg-black/80 shadow-lg"
+                style={{ left: `${diffPosition}%` }}
+              />
+
+              <input
+                type="range"
+                min={0}
+                max={100}
+                value={diffPosition}
+                onChange={(e) => setDiffPosition(Number(e.target.value))}
+                className="absolute inset-0 z-30 w-full h-full opacity-0 cursor-ew-resize"
+                aria-label="Adjust image diff slider"
+              />
+            </>
+          )}
         </div>
       </div>
 
