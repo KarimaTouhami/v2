@@ -94,21 +94,6 @@ export const PROJECTS: Project[] = [
     status: 'completed'
   },
   {
-    id: 6,
-    title: "Send It To Pluto",
-    company: "Personal Project",
-    year: "2026",
-    role: "Full Stack Developer",
-    image: "/projects/send-to-pluto-app.webp",
-    category: "Testing SMTP Server",
-    description: "A tool to test SMTP servers by sending emails to a fake inbox, helping developers debug email functionality without spamming real inboxes.",
-    stack: ["PHP Mailer", "SMTP", "HTML", "CSS"],
-    link: "not-hosted",
-    github: "https://github.com/KarimaTouhami/send-it-to-pluto",
-    featured: false,
-    status: 'completed'
-  },
-  {
     id: 7,
     title: "Artemis",
     company: "Personal Project",
