@@ -16,21 +16,13 @@ import { ImprintPage } from '@/components/pages/ImprintPage';
 export default function App() {
   const [activePage, setActivePage] = useState('home');
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-  const [darkMode, setDarkMode] = useState(() => {
+  const [darkMode] = useState(() => {
     if (typeof window !== 'undefined') {
       const savedMode = localStorage.getItem('darkMode');
       return savedMode === 'true';
     }
     return false;
   });
-  const [isMounted, setIsMounted] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsMounted(true);
-    }, 0);
-    return () => clearTimeout(timer);
-  }, []);
 
   useEffect(() => {
     localStorage.setItem('darkMode', String(darkMode));

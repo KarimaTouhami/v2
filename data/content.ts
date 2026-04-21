@@ -29,6 +29,12 @@ export interface StackCategory {
 
 export const EXPERIENCE: Experience[] = [
   {
+    company: "Ein Consulting",
+    role: "Full-Stack Developer",
+    period: "Dec 2025 - Present",
+    description: "Driving a full-stack migration from V2 to V3, replacing legacy PHP with Symfony V3 architecture. Focused on implementing modern technical solutions and a high-performance UI/UX redesign with 100% service continuity." 
+  },
+  {
     company: "FortuneTech",
     role: "Product Engineer",
     period: "2024 - Present",

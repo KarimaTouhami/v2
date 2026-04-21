@@ -45,14 +45,13 @@ export const Navigation = React.memo<NavigationProps>(({ activePage, setActivePa
               </button>
             ))}
           </div>
-          <button className="hidden lg:flex px-5 py-2.5 rounded-full bg-black dark:bg-white text-white dark:text-black text-sm font-bold hover:scale-105 transition-transform shadow-lg font-inter">
-            <a 
-                href="/Karima-Touhami-Resume.pdf" 
-                download="Karima-Touhami-Resume.pdf"
-            >
-              Download CV
-            </a>
-          </button>
+          <a
+            href="/Karima-Touhami-Resume.pdf"
+            download="Karima-Touhami-Resume.pdf"
+            className="hidden md:inline-flex px-5 py-2.5 rounded-full bg-black dark:bg-white text-white dark:text-black text-sm font-bold hover:scale-105 transition-transform shadow-lg font-inter"
+          >
+            Download CV
+          </a>
         </div>
 
         <button 

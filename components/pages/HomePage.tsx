@@ -82,11 +82,11 @@ export const HomePage: React.FC<HomePageProps> = ({ setActivePage, onViewProject
         </div>
       </section>
 
-      <section className="py-24 md:py-32 px-6 max-w-4xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 border-t border-neutral-100 dark:border-neutral-900">
-        <div>
+      <section className="py-24 md:py-32 px-6 max-w-6xl mx-auto grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] items-start gap-12 lg:gap-16 border-t border-neutral-100 dark:border-neutral-900">
+        <div className="lg:pr-4">
           <SectionHeading number="02">About Me</SectionHeading>
           <RevealOnScroll>
-            <div className="prose prose-lg dark:prose-invert text-neutral-500">
+            <div className="prose prose-lg dark:prose-invert text-neutral-600 dark:text-neutral-300 max-w-none lg:max-w-[38rem] leading-relaxed">
               <p className="mb-6">
                 I&apos;m a Software Development Engineer from Tangier, Morocco. I graduated with a degree 
                 in Software Engineering from <strong className="text-black dark:text-white">SUPTEM</strong> and 
@@ -97,15 +97,15 @@ export const HomePage: React.FC<HomePageProps> = ({ setActivePage, onViewProject
               </p>
             </div>
 
-            <div className="space-y-6 mb-10">
+            <div className="space-y-7 mb-10">
               {APPROACH_STEPS.map((step, i) => (
                 <div key={i} className="flex gap-4">
                   <div className="mt-1">
-                    <div className="w-2 h-2 bg-black dark:bg-white rounded-full"></div>
+                    <div className="w-2.5 h-2.5 bg-black dark:bg-white rounded-full"></div>
                   </div>
                   <div>
                     <h4 className="font-bold text-neutral-900 dark:text-white">{step.title}</h4>
-                    <p className="text-sm text-neutral-500">{step.desc}</p>
+                    <p className="text-sm text-neutral-600 dark:text-neutral-300">{step.desc}</p>
                   </div>
                 </div>
               ))}
@@ -121,22 +121,22 @@ export const HomePage: React.FC<HomePageProps> = ({ setActivePage, onViewProject
           </RevealOnScroll>
         </div>
 
-        <div>
-          <div className="mb-16">
+        <div className="lg:pl-2">
+          <div className="mb-10">
             <RevealOnScroll>
-              <h3 className="text-xs font-bold uppercase tracking-widest text-neutral-400 mb-10">Career History</h3>
+              <h3 className="text-xs font-bold uppercase tracking-widest text-neutral-400 mb-8">Career History</h3>
             </RevealOnScroll>
-            <div className="space-y-6">
+            <div className="space-y-8">
               {EXPERIENCE.map((job, index) => (
                 <RevealOnScroll key={index} delay={index * 100}>
-                  <div className="group relative pl-8 border-l border-neutral-200 dark:border-neutral-800 hover:border-black dark:hover:border-white transition-colors duration-300">
-                    <div className="absolute -left-[5px] top-0 w-2.5 h-2.5 rounded-full bg-neutral-200 dark:bg-neutral-800 group-hover:bg-black dark:group-hover:bg-white transition-colors duration-300 shadow-sm"></div>
+                  <div className="group relative pl-8 pb-1 border-l border-neutral-200 dark:border-neutral-700 hover:border-black dark:hover:border-white transition-colors duration-300">
+                    <div className="absolute -left-[5px] top-0 w-2.5 h-2.5 rounded-full bg-neutral-300 dark:bg-neutral-600 group-hover:bg-black dark:group-hover:bg-white transition-colors duration-300 shadow-sm"></div>
                     <div className="flex justify-between items-start mb-2">
                       <h4 className="font-bold text-lg md:text-xl dark:text-white">{job.company}</h4>
-                      <span className="text-xs font-mono text-neutral-400 bg-neutral-100 dark:bg-neutral-900 px-2 py-1 rounded">{job.period}</span>
+                      <span className="text-xs font-mono text-neutral-500 dark:text-neutral-300 bg-neutral-100 dark:bg-neutral-900 px-2 py-1 rounded">{job.period}</span>
                     </div>
-                    <p className="text-neutral-800 dark:text-neutral-300 font-medium mb-2">{job.role}</p>
-                    <p className="text-sm text-neutral-500 leading-relaxed">{job.description}</p>
+                    <p className="text-neutral-800 dark:text-neutral-200 font-medium mb-2">{job.role}</p>
+                    <p className="text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">{job.description}</p>
                   </div>
                 </RevealOnScroll>
               ))}
@@ -145,19 +145,19 @@ export const HomePage: React.FC<HomePageProps> = ({ setActivePage, onViewProject
 
           <div>
             <RevealOnScroll>
-              <h3 className="text-xs font-bold uppercase tracking-widest text-neutral-400 mb-10">Education</h3>
+              <h3 className="text-xs font-bold uppercase tracking-widest text-neutral-400 mb-8">Education</h3>
             </RevealOnScroll>
-            <div className="space-y-6">
+            <div className="space-y-8">
               {EDUCATION.map((edu, index) => (
                 <RevealOnScroll key={index} delay={index * 100}>
-                  <div className="group relative pl-8 border-l border-neutral-200 dark:border-neutral-800 hover:border-black dark:hover:border-white transition-colors duration-300">
-                    <div className="absolute -left-[5px] top-0 w-2.5 h-2.5 rounded-full bg-neutral-200 dark:bg-neutral-800 group-hover:bg-black dark:group-hover:bg-white transition-colors duration-300 shadow-sm"></div>
+                  <div className="group relative pl-8 pb-1 border-l border-neutral-200 dark:border-neutral-700 hover:border-black dark:hover:border-white transition-colors duration-300">
+                    <div className="absolute -left-[5px] top-0 w-2.5 h-2.5 rounded-full bg-neutral-300 dark:bg-neutral-600 group-hover:bg-black dark:group-hover:bg-white transition-colors duration-300 shadow-sm"></div>
                     <div className="flex justify-between items-start mb-2">
                       <h4 className="font-bold text-lg md:text-xl dark:text-white">{edu.school}</h4>
-                      <span className="text-xs font-mono text-neutral-400 bg-neutral-100 dark:bg-neutral-900 px-2 py-1 rounded">{edu.period}</span>
+                      <span className="text-xs font-mono text-neutral-500 dark:text-neutral-300 bg-neutral-100 dark:bg-neutral-900 px-2 py-1 rounded">{edu.period}</span>
                     </div>
-                    <p className="text-neutral-800 dark:text-neutral-300 font-medium mb-2">{edu.degree} in {edu.field}</p>
-                    {edu.description && <p className="text-sm text-neutral-500 leading-relaxed">{edu.description}</p>}
+                    <p className="text-neutral-800 dark:text-neutral-200 font-medium mb-2">{edu.degree} in {edu.field}</p>
+                    {edu.description && <p className="text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">{edu.description}</p>}
                   </div>
                 </RevealOnScroll>
               ))}
