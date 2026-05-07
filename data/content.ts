@@ -86,11 +86,11 @@ export const STACK_CATEGORIES: StackCategory[] = [
   {
     title: "Frontend Ecosystem",
     icon: React.createElement(Layout, { size: 20 }),
-    skills: ["React", "Next.js", "Tailwind CSS", "Symfony 7.4", "Framer Motion"]
+    skills: ["React", "Next.js", "Tailwind CSS", "Framer Motion"]
   },
   {
-    title: "Backend & DevOps",
+    title: "Backend & Infrastructure",
     icon: React.createElement(Wrench, { size: 20 }),
-    skills: ["Node.js", "PostgreSQL", "Firebase", "Docker", "Git/CI/CD", "WSL2/Zsh"]
+    skills: ["Node.js", "PostgreSQL", "Symfony 7.4", "Docker", "Git/CI/CD", "WSL2/Zsh"]
   }
 ];

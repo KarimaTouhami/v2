@@ -36,7 +36,7 @@ export const Footer: React.FC<FooterProps> = ({ setActivePage }) => (
       </RevealOnScroll>
       
       <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-neutral-200 dark:border-neutral-900 text-sm text-neutral-500 gap-4">
-        <p>© 2025 Karima Touhami. Crafted with precision.</p>
+        <p>© {new Date().getFullYear()} Karima Touhami. Crafted with precision.</p>
         <div className="flex gap-6">
           <button 
             onClick={() => setActivePage?.('privacy')}
