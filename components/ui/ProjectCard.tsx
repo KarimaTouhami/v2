@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { Project } from '@/data/projects';
 import { LazyImage } from './LazyImage';
@@ -6,19 +7,18 @@ import { RevealOnScroll } from './RevealOnScroll';
 
 interface ProjectCardProps {
   project: Project;
-  onClick: (project: Project) => void;
   index: number;
 }
 
-export const ProjectCard = React.memo<ProjectCardProps>(({ project, onClick, index }) => (
+export const ProjectCard = React.memo<ProjectCardProps>(({ project, index }) => (
   <RevealOnScroll delay={index * 100}>
-    <div 
-      onClick={() => onClick(project)}
-      className="group relative cursor-pointer overflow-hidden rounded-3xl bg-neutral-100 dark:bg-neutral-900 transition-all hover:scale-[1.02] hover:shadow-2xl hover:shadow-neutral-300/20 dark:hover:shadow-black/40 duration-500 border border-neutral-200 dark:border-neutral-800 hover:border-neutral-300 dark:hover:border-neutral-700"
+    <Link
+      href={`/projects/${project.id}`}
+      className="group relative cursor-pointer overflow-hidden rounded-3xl bg-neutral-100 dark:bg-neutral-900 transition-all hover:scale-[1.02] hover:shadow-2xl hover:shadow-neutral-300/20 dark:hover:shadow-black/40 duration-500 border border-neutral-200 dark:border-neutral-800 hover:border-neutral-300 dark:hover:border-neutral-700 block"
     >
       <div className="aspect-video w-full overflow-hidden">
-        <LazyImage 
-          src={project.image} 
+        <LazyImage
+          src={project.image}
           alt={project.title}
           fill
           priority={index < 2}
@@ -39,7 +39,7 @@ export const ProjectCard = React.memo<ProjectCardProps>(({ project, onClick, ind
           </div>
         </div>
       </div>
-      
+
       <div className="p-5 md:p-6 bg-white dark:bg-neutral-900 absolute bottom-0 w-full group-hover:translate-y-full transition-transform duration-500 ease-in-out border-t border-neutral-100 dark:border-neutral-800">
         <div className="flex justify-between items-center">
           <div>
@@ -51,7 +51,7 @@ export const ProjectCard = React.memo<ProjectCardProps>(({ project, onClick, ind
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   </RevealOnScroll>
 ));
 

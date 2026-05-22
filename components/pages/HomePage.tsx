@@ -1,21 +1,18 @@
+'use client';
+
 import React from 'react';
+import Link from 'next/link';
 import { ArrowRight, Download } from 'lucide-react';
 import { usePageTitle } from '@/hooks/usePageTitle';
 import { PROJECTS } from '@/data/projects';
 import { EXPERIENCE, APPROACH_STEPS, EDUCATION } from '@/data/content';
-import { Project } from '@/data/projects';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { RevealOnScroll } from '@/components/ui/RevealOnScroll';
 import { ProjectCard } from '@/components/ui/ProjectCard';
 
-interface HomePageProps {
-  setActivePage: (page: string) => void;
-  onViewProject: (project: Project) => void;
-}
-
-export const HomePage: React.FC<HomePageProps> = ({ setActivePage, onViewProject }) => {
+export const HomePage: React.FC = () => {
   usePageTitle('Home');
-  
+
   return (
     <div>
       <section className="pt-32 md:pt-40 pb-24 px-6 max-w-5xl mx-auto min-h-[90vh] flex flex-col justify-center">
@@ -28,7 +25,7 @@ export const HomePage: React.FC<HomePageProps> = ({ setActivePage, onViewProject
             Available for new opportunities
           </div>
         </RevealOnScroll>
-        
+
         <RevealOnScroll delay={100}>
           <div className="relative">
             <h1 className="text-5xl sm:text-4xl md:text-7xl lg:text-8xl xl:text-7xl font-bold tracking-tight mb-8 leading-none text-neutral-900 dark:text-white font-inter">
@@ -38,7 +35,7 @@ export const HomePage: React.FC<HomePageProps> = ({ setActivePage, onViewProject
             </h1>
           </div>
         </RevealOnScroll>
-        
+
         <RevealOnScroll delay={200}>
           <p className="text-lg md:text-2xl text-neutral-500 max-w-2xl leading-relaxed mb-12 font-light">
             Software Engineer specializing in modern frontend architecture and high-performance web applications. I turn complex problems into simple, elegant user experiences.
@@ -47,18 +44,18 @@ export const HomePage: React.FC<HomePageProps> = ({ setActivePage, onViewProject
 
         <RevealOnScroll delay={300}>
           <div className="flex flex-col sm:flex-row gap-4 items-start">
-            <button 
-              onClick={() => setActivePage('contact')}
+            <Link
+              href="/contact"
               className="w-full sm:w-auto px-8 py-4 bg-neutral-900 dark:bg-white text-white dark:text-black rounded-full font-bold text-lg hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2 shadow-lg font-inter"
             >
               Start a Project <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-            </button>
-            <button 
-              onClick={() => setActivePage('projects')}
+            </Link>
+            <Link
+              href="/projects"
               className="w-full sm:w-auto px-8 py-4 bg-transparent text-neutral-900 dark:text-white rounded-full font-bold text-lg border-2 border-neutral-200 dark:border-neutral-700 hover:border-neutral-900 dark:hover:border-white hover:bg-neutral-50 dark:hover:bg-neutral-900 transition-all font-inter"
             >
               View Portfolio
-            </button>
+            </Link>
           </div>
         </RevealOnScroll>
       </section>
@@ -67,17 +64,17 @@ export const HomePage: React.FC<HomePageProps> = ({ setActivePage, onViewProject
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-16 md:mb-20">
           <SectionHeading number="01">Selected Works</SectionHeading>
           <RevealOnScroll>
-            <button 
-              onClick={() => setActivePage('projects')}
+            <Link
+              href="/projects"
               className="group flex items-center gap-2 text-sm font-semibold text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors"
             >
               View all projects <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-            </button>
+            </Link>
           </RevealOnScroll>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
           {PROJECTS.slice(0, 4).map((project, index) => (
-            <ProjectCard key={project.id} project={project} onClick={onViewProject} index={index} />
+            <ProjectCard key={project.id} project={project} index={index} />
           ))}
         </div>
       </section>
@@ -88,8 +85,8 @@ export const HomePage: React.FC<HomePageProps> = ({ setActivePage, onViewProject
           <RevealOnScroll>
             <div className="prose prose-lg dark:prose-invert text-neutral-600 dark:text-neutral-300 max-w-none lg:max-w-[38rem] leading-relaxed">
               <p className="mb-6">
-                I&apos;m a Software Development Engineer from Tangier, Morocco. I graduated with a degree 
-                in Software Engineering from <strong className="text-black dark:text-white">SUPTEM</strong> and 
+                I&apos;m a Software Development Engineer from Tangier, Morocco. I graduated with a degree
+                in Software Engineering from <strong className="text-black dark:text-white">SUPTEM</strong> and
                 honed my craft at <strong className="text-black dark:text-white">ALX Africa</strong>.
               </p>
               <p className="mb-8">
@@ -111,8 +108,8 @@ export const HomePage: React.FC<HomePageProps> = ({ setActivePage, onViewProject
               ))}
             </div>
 
-            <a 
-              href="/Karima-Touhami-Resume.pdf" 
+            <a
+              href="/Karima-Touhami-Resume.pdf"
               download="Karima-Touhami-Resume.pdf"
               className="px-6 py-3 rounded-xl bg-neutral-900 dark:bg-white text-white dark:text-black hover:opacity-90 transition-opacity flex items-center gap-3 font-bold text-sm shadow-lg font-inter w-fit"
             >

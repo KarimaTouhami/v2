@@ -1,16 +1,14 @@
+'use client';
+
 import React from 'react';
 import { usePageTitle } from '@/hooks/usePageTitle';
-import { PROJECTS, Project } from '@/data/projects';
+import { PROJECTS } from '@/data/projects';
 import { RevealOnScroll } from '@/components/ui/RevealOnScroll';
 import { ProjectCard } from '@/components/ui/ProjectCard';
 
-interface ProjectsPageProps {
-  onViewProject: (project: Project) => void;
-}
-
-export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onViewProject }) => {
+export const ProjectsPage: React.FC = () => {
   usePageTitle('Projects');
-  
+
   return (
     <div className="pt-32 md:pt-40 pb-24 px-6 max-w-6xl mx-auto">
       <RevealOnScroll className="mb-16 md:mb-20">
@@ -22,7 +20,7 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onViewProject }) => 
       </RevealOnScroll>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
         {PROJECTS.map((project, index) => (
-          <ProjectCard key={project.id} project={project} onClick={onViewProject} index={index} />
+          <ProjectCard key={project.id} project={project} index={index} />
         ))}
       </div>
     </div>

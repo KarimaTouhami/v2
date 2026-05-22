@@ -22,7 +22,7 @@ export const PROJECTS: Project[] = [
     id: 1,
     title: "FortuneConnect",
     company: "FortuneTech SMC.",
-    year: "2024-2025",
+    year: "2024-2026",
     role: "Lead Frontend Engineer",
     image: "/projects/fortuneconnect-admin-dashboard.webp",
     category: "Frontend Architecture",
