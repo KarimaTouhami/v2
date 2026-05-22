@@ -80,6 +80,8 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({ projectId 
           <div className="flex flex-col sm:flex-row gap-4 mb-12">
             <a
               href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={handleLiveSiteClick}
               className="px-8 py-4 bg-black dark:bg-white text-white dark:text-black rounded-full font-bold hover:opacity-90 transition-all flex items-center justify-center gap-2 hover:gap-4 hover:shadow-lg hover:shadow-neutral-500/20 font-inter text-center cursor-pointer"
             >
@@ -87,6 +89,8 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({ projectId 
             </a>
             <a
               href={project.github}
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={handleGithubClick}
               className="px-8 py-4 bg-neutral-100 dark:bg-neutral-900 text-neutral-900 dark:text-white rounded-full font-bold hover:bg-neutral-200 dark:hover:bg-neutral-800 transition-colors flex items-center justify-center gap-2 border border-transparent hover:border-neutral-300 dark:hover:border-neutral-700 font-inter text-center cursor-pointer"
             >
