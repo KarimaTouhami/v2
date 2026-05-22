@@ -1,44 +1,61 @@
+'use client';
+
 import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 import { ArrowLeft, ExternalLink, Github } from 'lucide-react';
-import { Project } from '@/data/projects';
+import { PROJECTS } from '@/data/projects';
 import { LazyImage } from '@/components/ui/LazyImage';
 import { usePageTitle } from '@/hooks/usePageTitle';
 import { PrivateRepoModal } from '@/components/ui/PrivateRepoModal';
 import { NotHostedModal } from '@/components/ui/NotHosted';
 
 interface ProjectDetailPageProps {
-  project: Project;
-  onBack: () => void;
+  projectId: string;
 }
 
-export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({ project, onBack }) => {
-  usePageTitle(project.title);
+export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({ projectId }) => {
+  const router = useRouter();
+  const project = PROJECTS.find(p => p.id === Number(projectId));
+
+  usePageTitle(project?.title ?? null);
   const [showPrivateModal, setShowPrivateModal] = useState(false);
   const [showNotHostedModal, setShowNotHostedModal] = useState(false);
   const [diffPosition, setDiffPosition] = useState(50);
-  const isArtemisProject = project.title.toLowerCase() === 'artemis';
-  const showArtemisDiff = isArtemisProject && Boolean(project.diffImage);
+  const isArtemisProject = project?.title.toLowerCase() === 'artemis';
+  const showArtemisDiff = isArtemisProject && Boolean(project?.diffImage);
 
   const handleGithubClick = (e: React.MouseEvent) => {
-    if (project.github === '#' || project.github === 'private') {
+    if (project?.github === '#' || project?.github === 'private') {
       e.preventDefault();
       setShowPrivateModal(true);
     }
   };
 
   const handleLiveSiteClick = (e: React.MouseEvent) => {
-    if (project.link === 'not-hosted') {
+    if (project?.link === 'not-hosted') {
       e.preventDefault();
       setShowNotHostedModal(true);
     }
   };
-  
+
+  if (!project) {
+    return (
+      <div className="pt-28 min-h-screen max-w-6xl mx-auto px-6">
+        <h1 className="text-2xl font-bold">Project not found</h1>
+        <Link href="/projects" className="text-blue-500 hover:underline mt-4 inline-block">
+          Back to Projects
+        </Link>
+      </div>
+    );
+  }
+
   return (
     <div className="pt-28 min-h-screen max-w-6xl mx-auto px-6">
       <PrivateRepoModal isOpen={showPrivateModal} onClose={() => setShowPrivateModal(false)} />
       <NotHostedModal isOpen={showNotHostedModal} onClose={() => setShowNotHostedModal(false)} />
-      <button 
-        onClick={onBack}
+      <button
+        onClick={() => router.back()}
         className="group flex items-center gap-2 text-sm font-medium text-neutral-500 hover:text-black dark:hover:text-white mb-8 md:mb-12 transition-colors"
       >
         <div className="p-2 rounded-full bg-neutral-100 dark:bg-neutral-900 group-hover:bg-neutral-200 dark:group-hover:bg-neutral-800 transition-colors">
@@ -53,23 +70,23 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({ project, o
             {project.category}
           </div>
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 md:mb-8 leading-tight tracking-tight font-inter">{project.title}</h1>
-          
+
           <div className="prose prose-lg dark:prose-invert mb-10 text-neutral-500">
             <p className="text-lg md:text-xl leading-relaxed">
               {project.description}
             </p>
           </div>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 mb-12">
-            <a 
-              href={project.link} 
+            <a
+              href={project.link}
               onClick={handleLiveSiteClick}
               className="px-8 py-4 bg-black dark:bg-white text-white dark:text-black rounded-full font-bold hover:opacity-90 transition-all flex items-center justify-center gap-2 hover:gap-4 hover:shadow-lg hover:shadow-neutral-500/20 font-inter text-center cursor-pointer"
             >
               View Live Site <ExternalLink size={18} />
             </a>
-            <a 
-              href={project.github} 
+            <a
+              href={project.github}
               onClick={handleGithubClick}
               className="px-8 py-4 bg-neutral-100 dark:bg-neutral-900 text-neutral-900 dark:text-white rounded-full font-bold hover:bg-neutral-200 dark:hover:bg-neutral-800 transition-colors flex items-center justify-center gap-2 border border-transparent hover:border-neutral-300 dark:hover:border-neutral-700 font-inter text-center cursor-pointer"
             >
@@ -98,14 +115,14 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({ project, o
             className="w-full h-full object-cover"
           />
 
-          {showArtemisDiff && (
+          {showArtemisDiff && project.diffImage && (
             <>
               <div
                 className="absolute inset-0"
                 style={{ clipPath: `inset(0 ${100 - diffPosition}% 0 0)` }}
               >
                 <LazyImage
-                  src={project.diffImage!}
+                  src={project.diffImage}
                   alt={project.diffImageAlt || `${project.title} diff image`}
                   fill
                   className="w-full h-full object-cover"

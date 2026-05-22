@@ -1,15 +1,12 @@
 import React from 'react';
+import Link from 'next/link';
 import { Github, Linkedin, ArrowRight } from 'lucide-react';
 import { FaMedium } from 'react-icons/fa';
 import { RevealOnScroll } from '@/components/ui/RevealOnScroll';
 import { CopyEmailButton } from '@/components/ui/CopyEmailButton';
 import { SocialButton } from '@/components/ui/SocialButton';
 
-interface FooterProps {
-  setActivePage?: (page: string) => void;
-}
-
-export const Footer: React.FC<FooterProps> = ({ setActivePage }) => (
+export const Footer: React.FC = () => (
   <footer className="bg-neutral-50 dark:bg-black/40 pt-24 md:pt-32 pb-12 border-t border-neutral-200 dark:border-neutral-800 relative z-10">
     <div className="max-w-6xl mx-auto px-6">
       <RevealOnScroll>
@@ -34,22 +31,22 @@ export const Footer: React.FC<FooterProps> = ({ setActivePage }) => (
           </div>
         </div>
       </RevealOnScroll>
-      
+
       <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-neutral-200 dark:border-neutral-900 text-sm text-neutral-500 gap-4">
         <p>© {new Date().getFullYear()} Karima Touhami. Crafted with precision.</p>
         <div className="flex gap-6">
-          <button 
-            onClick={() => setActivePage?.('privacy')}
-            className="cursor-pointer hover:text-black dark:hover:text-white transition-colors"
+          <Link
+            href="/privacy"
+            className="hover:text-black dark:hover:text-white transition-colors"
           >
             Privacy
-          </button>
-          <button 
-            onClick={() => setActivePage?.('imprint')}
-            className="cursor-pointer hover:text-black dark:hover:text-white transition-colors"
+          </Link>
+          <Link
+            href="/imprint"
+            className="hover:text-black dark:hover:text-white transition-colors"
           >
             Imprint
-          </button>
+          </Link>
         </div>
       </div>
     </div>
