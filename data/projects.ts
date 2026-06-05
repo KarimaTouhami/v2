@@ -22,16 +22,16 @@ export const PROJECTS: Project[] = [
     id: 1,
     title: "FortuneConnect",
     company: "FortuneTech SMC.",
-    year: "2024-2026",
+    year: "2024-present",
     role: "Lead Frontend Engineer",
-    image: "/projects/fortuneconnect-admin-dashboard.webp",
+    image: "/projects/fortuneconnect-landing-page.webp",
     category: "Frontend Architecture",
-    description: "Built and maintained multi-role dashboards in Next.js + Shadcn UI, improving load speed by ~30% through optimized components and API caching. Established frontend architecture and best practices for a team of 6 developers in an Agile environment.",
+    description: "Leading the ongoing frontend architecture of a complex, multi-tenant ecosystem. Developed with Next.js, TypeScript, and Shadcn UI, the platform features robust role-based access control and efficient state hydration via Redux Toolkit. I maintain a 30% rendering speed improvement while continuously refining the codebase for long-term scalability.",
     stack: ["React", "TypeScript", "Tailwind", "Redux Toolkit"],
     link: "https://www.fortuneconnect.africa/",
     github: "private",
     featured: true,
-    status: 'completed'
+    status: 'ongoing'
   },
   {
     id: 2,
