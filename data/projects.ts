@@ -41,12 +41,12 @@ export const PROJECTS: Project[] = [
     role: "Full Stack Developer intern",
     image: "/projects/imachines-landing-page.webp",
     category: "Industrial Web App",
-    description: "Helped develop an e-commerce platform for industrial machinery, integrating Odoo ERP for seamless inventory and order management, enhancing user experience and operational efficiency.",
-    stack: ["Flutter", "PostgreSQL", "Odoo ERP", "WordPress"],
+    description: "Built a custom industrial e-commerce platform. Designed the relational database and engineered a seamless checkout system that automated commercial quotation (devis) generation and synced directly with Odoo ERP.",
+    stack: ["JavaScript", "PHP", "PostgreSQL", "Odoo ERP", "WordPress"],
     link: "https://italiamachines.com/",
     github: "private",
     featured: false,
-    status: 'completed'
+    status: "completed"
   },
   {
     id: 3,
