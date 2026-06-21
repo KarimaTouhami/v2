@@ -19,21 +19,6 @@ export interface Project {
 
 export const PROJECTS: Project[] = [
   {
-    id: 1,
-    title: "FortuneConnect",
-    company: "FortuneTech SMC.",
-    year: "2024-present",
-    role: "Lead Frontend Engineer",
-    image: "/projects/fortuneconnect-landing-page.webp",
-    category: "Frontend Architecture",
-    description: "Leading the ongoing frontend architecture of a complex, multi-tenant ecosystem. Developed with Next.js, TypeScript, and Shadcn UI, the platform features robust role-based access control and efficient state hydration via Redux Toolkit. I maintain a 30% rendering speed improvement while continuously refining the codebase for long-term scalability.",
-    stack: ["React", "TypeScript", "Tailwind", "Redux Toolkit"],
-    link: "https://www.fortuneconnect.africa/",
-    github: "private",
-    featured: true,
-    status: 'ongoing'
-  },
-  {
     id: 2,
     title: "IMachines E-commerce App",
     company: "ItaliaMachines",
@@ -47,6 +32,23 @@ export const PROJECTS: Project[] = [
     github: "private",
     featured: false,
     status: "completed"
+  },
+  {
+    id: 7,
+    title: "Artemis",
+    company: "Personal Project",
+    year: "2026",
+    role: "Full Stack engineer",
+    image: "/projects/artemis1.webp",
+    diffImage: "/projects/artemis2.webp",
+    diffImageAlt: "Artemis diff view",
+    category: "Compiler Visualizer",
+    description: "A real-time C-to-Assembly development environment. Bridges the gap between high-level logic and machine code by visualizing compiler behavior using Rust and the GCC backend.",
+    stack: ["Rust", "GCC", "Ratatui"],
+    link: "not-hosted",
+    github: "https://github.com/KarimaTouhami/artemis",
+    featured: true,
+    status: 'completed'
   },
   {
     id: 3,
@@ -90,23 +92,6 @@ export const PROJECTS: Project[] = [
     stack: ["Next.js", "GitHub API", "Tailwind CSS"],
     link: "https://github-compass.vercel.app/",
     github: "https://github.com/KarimaTouhami/github-compass",
-    featured: true,
-    status: 'completed'
-  },
-  {
-    id: 7,
-    title: "Artemis",
-    company: "Personal Project",
-    year: "2026",
-    role: "Full Stack engineer",
-    image: "/projects/artemis1.png",
-    diffImage: "/projects/artemis2.png",
-    diffImageAlt: "Artemis diff view",
-    category: "Compiler Visualizer",
-    description: "A real-time C-to-Assembly development environment. Bridges the gap between high-level logic and machine code by visualizing compiler behavior using Rust and the GCC backend.",
-    stack: ["Rust", "GCC", "Ratatui"],
-    link: "not-hosted",
-    github: "https://github.com/KarimaTouhami/artemis",
     featured: true,
     status: 'completed'
   }

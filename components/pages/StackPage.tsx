@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { usePageTitle } from '@/hooks/usePageTitle';
 import { STACK_CATEGORIES } from '@/data/content';

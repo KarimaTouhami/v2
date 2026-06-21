@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { ArrowRight, Download } from 'lucide-react';
 import { usePageTitle } from '@/hooks/usePageTitle';
 import { PROJECTS } from '@/data/projects';
-import { EXPERIENCE, APPROACH_STEPS, EDUCATION } from '@/data/content';
+import { EXPERIENCE, EDUCATION } from '@/data/content';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { RevealOnScroll } from '@/components/ui/RevealOnScroll';
 import { ProjectCard } from '@/components/ui/ProjectCard';
@@ -15,7 +15,7 @@ export const HomePage: React.FC = () => {
 
   return (
     <div>
-      <section className="pt-32 md:pt-40 pb-24 px-6 max-w-5xl mx-auto min-h-[90vh] flex flex-col justify-center">
+      <section className="pt-32 md:pt-40 pb-24 px-6 max-w-6xl mx-auto min-h-[90vh] flex flex-col justify-center">
         <RevealOnScroll>
           <div className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-400 text-xs font-bold uppercase tracking-wider mb-10 border-2 border-green-200 dark:border-green-900/40 shadow-sm">
             <span className="relative flex h-2.5 w-2.5">
@@ -60,7 +60,7 @@ export const HomePage: React.FC = () => {
         </RevealOnScroll>
       </section>
 
-      <section className="py-24 md:py-32 px-6 max-w-4xl mx-auto border-t border-neutral-100 dark:border-neutral-900">
+      <section className="py-24 md:py-32 px-6 max-w-6xl mx-auto border-t border-neutral-100 dark:border-neutral-900">
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-16 md:mb-20">
           <SectionHeading number="01">Selected Works</SectionHeading>
           <RevealOnScroll>
@@ -79,61 +79,50 @@ export const HomePage: React.FC = () => {
         </div>
       </section>
 
-      <section className="py-24 md:py-32 px-6 max-w-6xl mx-auto grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] items-start gap-12 lg:gap-16 border-t border-neutral-100 dark:border-neutral-900">
-        <div className="lg:pr-4">
-          <SectionHeading number="02">About Me</SectionHeading>
+      <section className="py-24 md:py-32 px-6 max-w-6xl mx-auto border-t border-neutral-100 dark:border-neutral-900">
+        <SectionHeading number="02">About Me</SectionHeading>
+
+        <RevealOnScroll>
+          <div className="text-neutral-600 dark:text-neutral-300 leading-relaxed text-lg mb-8 max-w-3xl">
+            <p className="mb-6">
+              I&apos;m a Software Engineer specializing in modern frontend architecture and high-performance web applications. I thrive on turning complex technical problems into simple, elegant user experiences.
+            </p>
+            <p>
+              Outside of my core engineering work, I bring a creative edge to everything I do. I&apos;m an artist at heart and love building unique side projects that blend form, function, and code.
+            </p>
+          </div>
+        </RevealOnScroll>
+
+        <div className="flex items-center gap-6 mb-16">
           <RevealOnScroll>
-            <div className="prose prose-lg dark:prose-invert text-neutral-600 dark:text-neutral-300 max-w-none lg:max-w-[38rem] leading-relaxed">
-              <p className="mb-6">
-                I&apos;m a Software Development Engineer from Tangier, Morocco. I graduated with a degree
-                in Software Engineering from <strong className="text-black dark:text-white">SUPTEM</strong> and
-                honed my craft at <strong className="text-black dark:text-white">ALX Africa</strong>.
-              </p>
-              <p className="mb-8">
-                My engineering philosophy is simple: <strong>User Experience is King, Performance is Queen.</strong> I don&apos;t just write code; I build solutions that drive business growth and user satisfaction.
-              </p>
-            </div>
-
-            <div className="space-y-7 mb-10">
-              {APPROACH_STEPS.map((step, i) => (
-                <div key={i} className="flex gap-4">
-                  <div className="mt-1">
-                    <div className="w-2.5 h-2.5 bg-black dark:bg-white rounded-full"></div>
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-neutral-900 dark:text-white">{step.title}</h4>
-                    <p className="text-sm text-neutral-600 dark:text-neutral-300">{step.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
             <a
               href="/Karima-Touhami-Resume.pdf"
               download="Karima-Touhami-Resume.pdf"
-              className="px-6 py-3 rounded-xl bg-neutral-900 dark:bg-white text-white dark:text-black hover:opacity-90 transition-opacity flex items-center gap-3 font-bold text-sm shadow-lg font-inter w-fit"
+              className="inline-flex px-6 py-3 rounded-xl bg-neutral-900 dark:bg-white text-white dark:text-black hover:opacity-90 transition-opacity items-center gap-3 font-bold text-sm shadow-lg font-inter"
             >
               <Download size={18} /> Download Full Resume
             </a>
           </RevealOnScroll>
         </div>
 
-        <div className="lg:pl-2">
-          <div className="mb-10">
+        <div className="grid md:grid-cols-2 gap-12 md:gap-16 border-t border-neutral-200 dark:border-neutral-800 pt-12">
+          <div>
             <RevealOnScroll>
-              <h3 className="text-xs font-bold uppercase tracking-widest text-neutral-400 mb-8">Career History</h3>
+              <h3 className="text-xs font-bold uppercase tracking-widest text-neutral-500 mb-8">Career History</h3>
             </RevealOnScroll>
-            <div className="space-y-8">
+            <div className="space-y-10">
               {EXPERIENCE.map((job, index) => (
                 <RevealOnScroll key={index} delay={index * 100}>
-                  <div className="group relative pl-8 pb-1 border-l border-neutral-200 dark:border-neutral-700 hover:border-black dark:hover:border-white transition-colors duration-300">
-                    <div className="absolute -left-[5px] top-0 w-2.5 h-2.5 rounded-full bg-neutral-300 dark:bg-neutral-600 group-hover:bg-black dark:group-hover:bg-white transition-colors duration-300 shadow-sm"></div>
-                    <div className="flex justify-between items-start mb-2">
-                      <h4 className="font-bold text-lg md:text-xl dark:text-white">{job.company}</h4>
-                      <span className="text-xs font-mono text-neutral-500 dark:text-neutral-300 bg-neutral-100 dark:bg-neutral-900 px-2 py-1 rounded">{job.period}</span>
+                  <div className="group relative pl-9 border-l-2 border-neutral-200 dark:border-neutral-700 hover:border-black dark:hover:border-white transition-colors duration-300">
+                    <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-white dark:bg-neutral-950 border-2 border-neutral-300 dark:border-neutral-600 group-hover:border-black dark:group-hover:border-white transition-colors duration-300"></div>
+                    <div className="pb-8">
+                      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1 mb-3">
+                        <h4 className="font-bold text-lg md:text-xl dark:text-white">{job.company}</h4>
+                        <span className="text-xs font-mono text-neutral-500 dark:text-neutral-400 bg-neutral-100 dark:bg-neutral-800 px-3 py-1 rounded-full w-fit">{job.period}</span>
+                      </div>
+                      <p className="text-neutral-700 dark:text-neutral-300 font-medium mb-2">{job.role}</p>
+                      <p className="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed">{job.description}</p>
                     </div>
-                    <p className="text-neutral-800 dark:text-neutral-200 font-medium mb-2">{job.role}</p>
-                    <p className="text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">{job.description}</p>
                   </div>
                 </RevealOnScroll>
               ))}
@@ -142,23 +131,63 @@ export const HomePage: React.FC = () => {
 
           <div>
             <RevealOnScroll>
-              <h3 className="text-xs font-bold uppercase tracking-widest text-neutral-400 mb-8">Education</h3>
+              <h3 className="text-xs font-bold uppercase tracking-widest text-neutral-500 mb-8">Education</h3>
             </RevealOnScroll>
-            <div className="space-y-8">
+            <div className="space-y-10">
               {EDUCATION.map((edu, index) => (
                 <RevealOnScroll key={index} delay={index * 100}>
-                  <div className="group relative pl-8 pb-1 border-l border-neutral-200 dark:border-neutral-700 hover:border-black dark:hover:border-white transition-colors duration-300">
-                    <div className="absolute -left-[5px] top-0 w-2.5 h-2.5 rounded-full bg-neutral-300 dark:bg-neutral-600 group-hover:bg-black dark:group-hover:bg-white transition-colors duration-300 shadow-sm"></div>
-                    <div className="flex justify-between items-start mb-2">
-                      <h4 className="font-bold text-lg md:text-xl dark:text-white">{edu.school}</h4>
-                      <span className="text-xs font-mono text-neutral-500 dark:text-neutral-300 bg-neutral-100 dark:bg-neutral-900 px-2 py-1 rounded">{edu.period}</span>
+                  <div className="group relative pl-9 border-l-2 border-neutral-200 dark:border-neutral-700 hover:border-black dark:hover:border-white transition-colors duration-300">
+                    <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-white dark:bg-neutral-950 border-2 border-neutral-300 dark:border-neutral-600 group-hover:border-black dark:group-hover:border-white transition-colors duration-300"></div>
+                    <div className="pb-8">
+                      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1 mb-3">
+                        <h4 className="font-bold text-lg md:text-xl dark:text-white">{edu.school}</h4>
+                        <span className="text-xs font-mono text-neutral-500 dark:text-neutral-400 bg-neutral-100 dark:bg-neutral-800 px-3 py-1 rounded-full w-fit">{edu.period}</span>
+                      </div>
+                      <p className="text-neutral-700 dark:text-neutral-300 font-medium mb-2">{edu.degree} in {edu.field}</p>
+                      {edu.description && <p className="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed">{edu.description}</p>}
                     </div>
-                    <p className="text-neutral-800 dark:text-neutral-200 font-medium mb-2">{edu.degree} in {edu.field}</p>
-                    {edu.description && <p className="text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">{edu.description}</p>}
                   </div>
                 </RevealOnScroll>
               ))}
             </div>
+
+            <RevealOnScroll>
+              <a
+                href="https://www.linkedin.com/posts/karimatouhami_piscine-growthmindset-codinglife-activity-7377401368287866880-OGId"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block mt-8 rounded-2xl bg-neutral-50 dark:bg-neutral-900/50 border border-neutral-200 dark:border-neutral-800 hover:border-neutral-900 dark:hover:border-neutral-600 transition-colors group overflow-hidden"
+              >
+                <div className="aspect-video bg-neutral-200 dark:bg-neutral-800 overflow-hidden">
+                  <img
+                    src="/projects/piscine-1.jpg"
+                    alt="1337 Piscine post"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    loading="lazy"
+                  />
+                </div>
+
+                <div className="p-4">
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="w-7 h-7 rounded-full bg-neutral-200 dark:bg-neutral-800 flex items-center justify-center flex-shrink-0 border border-neutral-300 dark:border-neutral-700">
+                      <span className="text-[10px] font-bold text-neutral-500">KT</span>
+                    </div>
+                    <div className="leading-tight">
+                      <span className="font-semibold text-xs text-neutral-900 dark:text-white">Karima Touhami</span>
+                      <span className="text-[10px] text-neutral-400 ml-1.5">on LinkedIn</span>
+                    </div>
+                  </div>
+                  <p className="text-xs text-neutral-600 dark:text-neutral-400 leading-relaxed line-clamp-2">
+                    Just survived the 1337 Rabat Piscine (July 2025) 🫠💻 It was a month of: ⚡ sleepless nights ⚡ endless bugs ⚡ daily evaluations ⚡ and way too much caffeine ☕
+                  </p>
+                  <div className="flex items-center gap-3 mt-3 pt-2.5 border-t border-neutral-200 dark:border-neutral-800 text-[11px] text-neutral-500">
+                    <span>❤️ 14</span>
+                    <span>💬 4</span>
+                    <span className="ml-auto text-neutral-900 dark:text-white font-medium group-hover:underline">View on LinkedIn →</span>
+                  </div>
+                </div>
+              </a>
+            </RevealOnScroll>
           </div>
         </div>
       </section>

@@ -19,7 +19,7 @@ export const CopyEmailButton: React.FC = () => {
       aria-label="Copy email address"
     >
       <Mail size={20} />
-      <span className="text-sm font-semibold">
+      <span className="text-sm font-semibold" aria-live="polite">
         {copied ? "Copied!" : "Copy Email"}
       </span>
       {copied ? <CheckCircle2 size={18} className="text-green-400" /> : <Copy size={18} className="opacity-70 group-hover:opacity-100 transition-opacity" />}

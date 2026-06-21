@@ -44,6 +44,11 @@
   scroll-behavior: smooth;
 }
 
+*:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
 html {
   overflow-x: hidden;
   width: 100%;
@@ -92,16 +97,16 @@ img {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--background);
+  background: var(--border);
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--background);
+  background: var(--foreground);
 }
 
 /* Firefox scrollbar */
 * {
   scrollbar-width: thin;
-  scrollbar-color: var(--background) var(--background);
+  scrollbar-color: var(--border) transparent;
 }

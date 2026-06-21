@@ -62,13 +62,15 @@ export const Navigation = React.memo(() => {
           className="md:hidden p-2 text-neutral-600 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-lg transition-colors relative z-50"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label="Toggle menu"
+          aria-expanded={isMenuOpen}
+          aria-controls="mobile-menu"
         >
           {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
 
       {isMenuOpen && (
-        <div className="md:hidden fixed inset-0 top-0 pt-24 bg-white dark:bg-neutral-950 z-40 p-6 animate-in slide-in-from-right-10 duration-200 flex flex-col h-screen">
+        <div id="mobile-menu" role="dialog" aria-modal="true" aria-label="Navigation menu" className="md:hidden fixed inset-0 top-0 pt-24 bg-white dark:bg-neutral-950 z-40 p-6 animate-in slide-in-from-right-10 duration-200 flex flex-col h-screen">
           <div className="flex flex-col gap-2 flex-1">
             {NAV_LINKS.map((link) => (
               <Link

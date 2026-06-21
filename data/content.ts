@@ -8,11 +8,6 @@ export interface Experience {
   description: string;
 }
 
-export interface ApproachStep {
-  title: string;
-  desc: string;
-}
-
 export interface Education {
   school: string;
   degree: string;
@@ -52,12 +47,6 @@ export const EXPERIENCE: Experience[] = [
     period: "Jul 2023",
     description: "Optimized SQL queries for the inventory database, reducing slow query logs by 60%."
   }
-];
-
-export const APPROACH_STEPS: ApproachStep[] = [
-  { title: "User-Centric", desc: "I start by understanding the 'why' behind the feature." },
-  { title: "Scalable Architecture", desc: "Code is written to be read and maintained by humans." },
-  { title: "Performance First", desc: "60fps interactions and <1s load times are my standard." },
 ];
 
 export const EDUCATION: Education[] = [

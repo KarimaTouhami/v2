@@ -10,9 +10,17 @@ export const NotHostedModal: React.FC<NotHostedModalProps> = ({ isOpen, onClose 
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate-in fade-in duration-200">
+    <div
+      className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate-in fade-in duration-200"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Not hosted notice"
+      onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}
+      onKeyDown={(e) => { if (e.key === 'Escape') onClose(); }}
+    >
       <div className="bg-white dark:bg-neutral-900 rounded-3xl shadow-2xl border-2 border-neutral-200 dark:border-neutral-800 max-w-lg w-full p-8 md:p-10 animate-in zoom-in-95 duration-300 relative">
-        <button 
+        <button
+          autoFocus
           onClick={onClose}
           className="absolute top-6 right-6 p-2 rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
           aria-label="Close"
