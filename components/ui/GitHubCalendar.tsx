@@ -30,23 +30,33 @@ export const GitHubCalendar: React.FC<Props> = ({ username }) => {
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 5000);
+
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `https://github-contributions-api.jogruber.de/v4/${username}?y=last`
+          `https://github-contributions-api.jogruber.de/v4/${username}?y=last`,
+          { signal: controller.signal }
         );
         const result = await response.json();
         if (result) {
           setData(result.contributions);
         }
-      } catch (error: unknown) {
-        setError(error instanceof Error ? error : new Error("Unknown error"));
+      } catch {
+        setError(new Error("Failed to load GitHub activity"));
       } finally {
         setLoading(false);
+        clearTimeout(timeout);
       }
     };
 
     fetchData();
+
+    return () => {
+      controller.abort();
+      clearTimeout(timeout);
+    };
   }, [username]);
 
   if (loading) {

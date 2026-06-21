@@ -1,4 +1,6 @@
-import React from 'react';
+'use client';
+
+import { useSyncExternalStore } from 'react';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 
 interface RevealOnScrollProps {
@@ -7,21 +9,28 @@ interface RevealOnScrollProps {
   delay?: number;
 }
 
-export const RevealOnScroll: React.FC<RevealOnScrollProps> = ({ children, className = "", delay = 0 }) => {
-  const [ref, isVisible] = useIntersectionObserver({ threshold: 0.1 });
-  
-  const isReducedMotion = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+function useReducedMotion() {
+  return useSyncExternalStore(
+    (onStoreChange) => {
+      const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+      mq.addEventListener('change', onStoreChange);
+      return () => mq.removeEventListener('change', onStoreChange);
+    },
+    () => window.matchMedia('(prefers-reduced-motion: reduce)').matches,
+    () => false,
+  );
+}
 
-  if (isReducedMotion) {
-    return <div className={className}>{children}</div>;
-  }
-  
+export const RevealOnScroll = ({ children, className = "", delay = 0 }: RevealOnScrollProps) => {
+  const [ref, isVisible] = useIntersectionObserver({ threshold: 0.1 });
+  const isReducedMotion = useReducedMotion();
+
   return (
     <div
       ref={ref}
       style={{ transitionDelay: `${delay}ms` }}
-      className={`transition-all duration-1000 cubic-bezier(0.17, 0.55, 0.55, 1) ${
-        isVisible 
+      className={`transition-all duration-1000 ${
+        isVisible && !isReducedMotion
           ? 'opacity-100 translate-y-0 filter-none' 
           : 'opacity-0 translate-y-12 blur-sm'
       } ${className}`}

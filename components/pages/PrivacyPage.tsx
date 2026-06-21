@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { usePageTitle } from '@/hooks/usePageTitle';
 import { RevealOnScroll } from '@/components/ui/RevealOnScroll';

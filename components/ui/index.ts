@@ -6,3 +6,4 @@ export { CopyEmailButton } from './CopyEmailButton';
 export { SocialButton } from './SocialButton';
 export { ProjectCard } from './ProjectCard';
 export { PrivateRepoModal } from './PrivateRepoModal';
+export { NotHostedModal } from './NotHosted';

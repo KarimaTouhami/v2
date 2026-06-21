@@ -1,7 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { Github, Linkedin, ArrowRight } from 'lucide-react';
-import { FaMedium } from 'react-icons/fa';
+import { Github, Linkedin, ArrowRight, BookOpen } from 'lucide-react';
 import { RevealOnScroll } from '@/components/ui/RevealOnScroll';
 import { CopyEmailButton } from '@/components/ui/CopyEmailButton';
 import { SocialButton } from '@/components/ui/SocialButton';
@@ -26,7 +25,7 @@ export const Footer: React.FC = () => (
             <div className="flex gap-4">
               <SocialButton icon={<Github size={20} />} href="https://github.com/KarimaTouhami" label="GitHub" />
               <SocialButton icon={<Linkedin size={20} />} href="https://linkedin.com/in/karimatouhami" label="LinkedIn" />
-              <SocialButton icon={<FaMedium size={20} />} href="https://medium.com/@karimatouhami" label="Medium" />
+              <SocialButton icon={<BookOpen size={20} />} href="https://medium.com/@karimatouhami" label="Medium" />
             </div>
           </div>
         </div>

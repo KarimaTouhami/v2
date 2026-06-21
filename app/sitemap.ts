@@ -1,8 +1,8 @@
 import { MetadataRoute } from 'next';
 
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://karimatouhami.com';
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://karimatouhami.com';
-  
   return [
     {
       url: baseUrl,
@@ -27,6 +27,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: 'yearly',
       priority: 0.5,
+    },
+    {
+      url: `${baseUrl}/imprint`,
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
+      priority: 0.3,
+    },
+    {
+      url: `${baseUrl}/privacy`,
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
+      priority: 0.3,
     },
   ];
 }
