@@ -8,13 +8,6 @@ export const useIntersectionObserver = (options = {}) => {
     const currentElement = elementRef.current;
     if (!currentElement) return;
 
-    const rect = currentElement.getBoundingClientRect();
-    const isInViewport = rect.top < window.innerHeight && rect.bottom > 0;
-    if (isInViewport) {
-      const timer = setTimeout(() => setIsVisible(true), 20);
-      return () => clearTimeout(timer);
-    }
-
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
         setIsVisible(true);
