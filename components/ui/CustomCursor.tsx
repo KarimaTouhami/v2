@@ -9,7 +9,6 @@ export const CustomCursor: React.FC = () => {
 
   useEffect(() => {
     if (window.matchMedia('(pointer: coarse)').matches) return;
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
     let requestRef: number;
     let mouseX = 0;
