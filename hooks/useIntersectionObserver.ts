@@ -5,6 +5,16 @@ export const useIntersectionObserver = (options = {}) => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    const currentElement = elementRef.current;
+    if (!currentElement) return;
+
+    const rect = currentElement.getBoundingClientRect();
+    const isInViewport = rect.top < window.innerHeight && rect.bottom > 0;
+    if (isInViewport) {
+      setIsVisible(true);
+      return;
+    }
+
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
         setIsVisible(true);
@@ -12,17 +22,10 @@ export const useIntersectionObserver = (options = {}) => {
       }
     }, { threshold: 0.1, ...options });
 
-    const currentElement = elementRef.current;
-    if (currentElement) {
-      observer.observe(currentElement);
-    }
+    observer.observe(currentElement);
 
-    return () => {
-      if (currentElement) {
-        observer.unobserve(currentElement);
-      }
-    };
-  }, [options]);
+    return () => observer.disconnect();
+  }, []);
 
   return [elementRef, isVisible] as const;
 };
