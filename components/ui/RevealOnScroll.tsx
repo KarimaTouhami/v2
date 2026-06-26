@@ -15,7 +15,7 @@ export const RevealOnScroll = ({ children, className = "", delay = 0 }: RevealOn
     <div
       ref={ref}
       style={{ transitionDelay: `${delay}ms` }}
-      className={`transition-all duration-1000 ${
+      className={`transition-all duration-500 ${
         isVisible
           ? 'opacity-100 translate-y-0 filter-none' 
           : 'opacity-0 translate-y-12 blur-sm'
