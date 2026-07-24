@@ -76,7 +76,7 @@ export const PROJECTS: Project[] = [
     description: "Full-stack social media app enabling users to share tea experiences. Implemented real-time notifications using Appwrite.",
     stack: ["React", "Appwrite", "TypeScript", "Shadcn UI", "Tailwind CSS"],
     link: "https://the-tea-is-gone.vercel.app/",
-    github: "https://github.com/KarimaTouhami/the-tea-is-gone",
+    github: "private",
     featured: false,
     status: 'completed'
   },
