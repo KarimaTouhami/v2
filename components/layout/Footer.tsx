@@ -2,7 +2,6 @@ import React from 'react';
 import Link from 'next/link';
 import { Github, Linkedin, ArrowRight, BookOpen } from 'lucide-react';
 import { RevealOnScroll } from '@/components/ui/RevealOnScroll';
-import { CopyEmailButton } from '@/components/ui/CopyEmailButton';
 import { SocialButton } from '@/components/ui/SocialButton';
 
 export const Footer: React.FC = () => (
@@ -16,12 +15,14 @@ export const Footer: React.FC = () => (
               I&apos;m focused on building accessible, pixel-perfect, and performant web experiences.
               Currently open for full-time opportunities.
             </p>
-            <CopyEmailButton />
+            <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-neutral-900 dark:bg-white text-white dark:text-black hover:scale-[1.02] active:scale-[0.98] transition-all shadow-lg font-semibold text-sm">
+              Start a Project <ArrowRight size={18} />
+            </Link>
           </div>
           <div className="flex flex-col md:items-end justify-center gap-8">
-            <a href="mailto:***REDACTED***" className="text-xl md:text-3xl font-medium hover:text-neutral-600 dark:hover:text-neutral-400 transition-colors flex items-center gap-4 group font-inter break-all">
-              ***REDACTED*** <ArrowRight className="group-hover:translate-x-2 transition-transform duration-300" size={32} />
-            </a>
+            <Link href="/contact" className="text-xl md:text-3xl font-medium hover:text-neutral-600 dark:hover:text-neutral-400 transition-colors flex items-center gap-4 group font-inter">
+              Let&apos;s talk <ArrowRight className="group-hover:translate-x-2 transition-transform duration-300" size={32} />
+            </Link>
             <div className="flex gap-4">
               <SocialButton icon={<Github size={20} />} href="https://github.com/KarimaTouhami" label="GitHub" />
               <SocialButton icon={<Linkedin size={20} />} href="https://linkedin.com/in/karimatouhami" label="LinkedIn" />

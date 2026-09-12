@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { ArrowRight, Download } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { usePageTitle } from '@/hooks/usePageTitle';
 import { PROJECTS } from '@/data/projects';
 import { EXPERIENCE, EDUCATION } from '@/data/content';
@@ -92,18 +92,6 @@ export const HomePage: React.FC = () => {
             </p>
           </div>
         </RevealOnScroll>
-
-        <div className="flex items-center gap-6 mb-16">
-          <RevealOnScroll>
-            <a
-              href="/Karima-Touhami-Resume.pdf"
-              download="Karima-Touhami-Resume.pdf"
-              className="inline-flex px-6 py-3 rounded-xl bg-neutral-900 dark:bg-white text-white dark:text-black hover:opacity-90 transition-opacity items-center gap-3 font-bold text-sm shadow-lg font-inter"
-            >
-              <Download size={18} /> Download Full Resume
-            </a>
-          </RevealOnScroll>
-        </div>
 
         <div className="grid md:grid-cols-2 gap-12 md:gap-16 border-t border-neutral-200 dark:border-neutral-800 pt-12">
           <div>

@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { usePageTitle } from '@/hooks/usePageTitle';
 import { RevealOnScroll } from '@/components/ui/RevealOnScroll';
 
@@ -116,10 +117,11 @@ export const PrivacyPage: React.FC = () => {
           <section className="mb-12">
             <h2 className="text-2xl md:text-3xl font-bold mb-4 text-neutral-900 dark:text-white">Contact</h2>
             <p className="text-neutral-600 dark:text-neutral-400 leading-relaxed">
-              If you have any questions about this Privacy Policy, please contact me at{' '}
-              <a href="mailto:***REDACTED***" className="text-neutral-900 dark:text-white font-medium hover:underline">
-                ***REDACTED***
-              </a>
+              If you have any questions about this Privacy Policy, please{' '}
+              <Link href="/contact" className="text-neutral-900 dark:text-white font-medium hover:underline">
+                reach out via the contact form
+              </Link>
+              .
             </p>
           </section>
         </RevealOnScroll>

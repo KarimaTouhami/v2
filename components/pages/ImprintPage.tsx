@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { usePageTitle } from '@/hooks/usePageTitle';
 import { RevealOnScroll } from '@/components/ui/RevealOnScroll';
 import { Mail, MapPin } from 'lucide-react';
@@ -32,12 +33,9 @@ export const ImprintPage: React.FC = () => {
 
               <div className="flex items-start gap-3">
                 <Mail size={20} className="text-neutral-500 mt-1 flex-shrink-0" />
-                <a 
-                  href="mailto:***REDACTED***" 
-                  className="text-neutral-900 dark:text-white font-medium hover:underline break-all"
-                >
-                  ***REDACTED***
-                </a>
+                <Link href="/contact" className="text-neutral-900 dark:text-white font-medium hover:underline">
+                  Contact form
+                </Link>
               </div>
             </div>
           </section>
@@ -86,13 +84,13 @@ export const ImprintPage: React.FC = () => {
           <section className="mb-12">
             <h2 className="text-2xl md:text-3xl font-bold mb-4 text-neutral-900 dark:text-white">Contact</h2>
             <p className="text-neutral-600 dark:text-neutral-400 leading-relaxed">
-              For any questions, concerns, or inquiries regarding this website or its content, please contact me via email at{' '}
-              <a 
-                href="mailto:***REDACTED***"
+              For any questions, concerns, or inquiries regarding this website or its content, please use the{' '}
+              <Link
+                href="/contact"
                 className="text-neutral-900 dark:text-white font-medium hover:underline"
               >
-                ***REDACTED***
-              </a>
+                contact form
+              </Link>
               .
             </p>
           </section>

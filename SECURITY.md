@@ -17,7 +17,7 @@ found a security issue? first of all, thank you for looking out 💚
 - ❌ exploit it yourself (be a good human pls)
 
 **instead, do this:**
-1. 📧 email me directly at *****REDACTED*****
+1. 📧 use the **contact form** at [karimatouhami.com/contact](https://karimatouhami.com/contact)
 2. 📝 include:
    - description of the vulnerability
    - steps to reproduce
@@ -69,7 +69,7 @@ i believe in responsible disclosure. if you find something:
 
 ## 💡 Questions?
 
-got questions about security stuff? hit me up at ***REDACTED***
+got questions about security stuff? hit me up via the [contact form](https://karimatouhami.com/contact)
 
 ---
 
