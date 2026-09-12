@@ -4,7 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { usePageTitle } from '@/hooks/usePageTitle';
 import { RevealOnScroll } from '@/components/ui/RevealOnScroll';
-import { Mail, MapPin } from 'lucide-react';
+import { Mail } from 'lucide-react';
 
 export const ImprintPage: React.FC = () => {
   usePageTitle('Imprint');
@@ -23,15 +23,8 @@ export const ImprintPage: React.FC = () => {
             <div className="bg-neutral-50 dark:bg-neutral-900 rounded-2xl p-8 border border-neutral-200 dark:border-neutral-800">
               <h3 className="text-xl font-bold mb-4 text-neutral-900 dark:text-white">Karima Touhami</h3>
               <p className="text-neutral-600 dark:text-neutral-400 mb-2">Software Development Engineer</p>
-              
-              <div className="flex items-start gap-3 mt-6 mb-4">
-                <MapPin size={20} className="text-neutral-500 mt-1 flex-shrink-0" />
-                <div className="text-neutral-600 dark:text-neutral-400">
-                  <p>***REDACTED***</p>
-                </div>
-              </div>
 
-              <div className="flex items-start gap-3">
+              <div className="flex items-start gap-3 mt-6">
                 <Mail size={20} className="text-neutral-500 mt-1 flex-shrink-0" />
                 <Link href="/contact" className="text-neutral-900 dark:text-white font-medium hover:underline">
                   Contact form

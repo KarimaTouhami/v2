@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Mail, Linkedin, Github, MapPin } from 'lucide-react';
+import { Mail, Linkedin, Github } from 'lucide-react';
 import { usePageTitle } from '@/hooks/usePageTitle';
 import { RevealOnScroll } from '@/components/ui/RevealOnScroll';
 import { GitHubCalendar } from '@/components/ui/GitHubCalendar';
@@ -53,23 +53,6 @@ export const ContactPage: React.FC = () => {
             <p className="text-neutral-500 dark:text-neutral-400 mb-2">Check my code</p>
             <p className="text-lg font-semibold text-neutral-900 dark:text-white group-hover:underline decoration-2 underline-offset-4">@KarimaTouhami</p>
           </a>
-
-          <div className="p-8 bg-linear-to-br from-green-50 to-emerald-50 dark:from-green-900/10 dark:to-emerald-900/10 rounded-3xl border-2 border-green-200 dark:border-green-900/40">
-             <div className="flex items-center gap-4 mb-4">
-              <div className="p-4 bg-white dark:bg-neutral-800 rounded-2xl shadow-sm">
-                <MapPin size={24} className="text-green-600 dark:text-green-400" />
-              </div>
-              <h3 className="text-xl font-bold font-inter text-neutral-900 dark:text-white">Location</h3>
-            </div>
-            <p className="text-neutral-600 dark:text-neutral-300 mb-3">***REDACTED***</p>
-            <div className="flex items-center gap-2 text-green-700 dark:text-green-400 font-semibold">
-                <span className="relative flex h-3 w-3">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
-                </span>
-                Available for new projects
-            </div>
-          </div>
         </div>
       </RevealOnScroll>
 
