@@ -83,7 +83,7 @@ Found a bug? Skill issue on my part, probably. Feel free to open an issue or a P
 
 ## 📬 Let's Be Moots
 
-* **Contact:** [karimatouhami.com/contact](https://karimatouhami.com/contact)
+* **Contact:** [karimatouhami.com/contact](https://karimatouhami.vercel.app/contact)
 * **LinkedIn:** [@karimatouhami](https://www.linkedin.com/in/karimatouhami)
 
 ---
