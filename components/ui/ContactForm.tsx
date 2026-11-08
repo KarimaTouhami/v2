@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { Send, Loader2, CheckCircle2, AlertCircle } from 'lucide-react';
 
 type Status = 'idle' | 'sending' | 'success' | 'error';
@@ -8,26 +8,48 @@ type Status = 'idle' | 'sending' | 'success' | 'error';
 const inputClass =
   "w-full bg-neutral-50 dark:bg-neutral-950 border-2 border-neutral-200 dark:border-neutral-800 rounded-xl px-4 py-3 text-neutral-900 dark:text-white placeholder-neutral-400 focus:outline-none focus:border-black dark:focus:border-white transition-colors";
 
+function createIdempotencyKey(): string {
+  if (typeof crypto !== 'undefined' && typeof crypto.randomUUID === 'function') {
+    return crypto.randomUUID();
+  }
+  return `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 12)}`;
+}
+
 export const ContactForm: React.FC = () => {
   const [status, setStatus] = useState<Status>('idle');
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [form, setForm] = useState({ name: '', email: '', message: '', company: '' });
+  // Reused across retries so a failed/double submit can't send the same email twice.
+  const idempotencyKey = useRef<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('sending');
+    setErrorMessage(null);
+
+    idempotencyKey.current ??= createIdempotencyKey();
+
     try {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
+        body: JSON.stringify({ ...form, idempotencyKey: idempotencyKey.current }),
       });
       if (res.ok) {
         setForm({ name: '', email: '', message: '', company: '' });
+        idempotencyKey.current = null;
         setStatus('success');
       } else {
+        const data = (await res.json().catch(() => null)) as { error?: string } | null;
+        setErrorMessage(
+          res.status === 429
+            ? data?.error ?? 'Too many messages. Please try again later.'
+            : 'Something went wrong. Please try again.'
+        );
         setStatus('error');
       }
     } catch {
+      setErrorMessage('Something went wrong. Please try again.');
       setStatus('error');
     }
   };
@@ -110,7 +132,7 @@ export const ContactForm: React.FC = () => {
         )}
         {status === 'error' && (
           <span className="flex items-center gap-2 text-red-600 dark:text-red-400 font-medium text-sm">
-            <AlertCircle size={18} /> Something went wrong. Please try again.
+            <AlertCircle size={18} /> {errorMessage ?? 'Something went wrong. Please try again.'}
           </span>
         )}
       </div>

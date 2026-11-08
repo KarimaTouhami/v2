@@ -1,3 +1,9 @@
+export interface ProjectImage {
+  src: string;
+  alt: string;
+  caption?: string;
+}
+
 export interface Project {
   id: number;
   title: string;
@@ -5,6 +11,7 @@ export interface Project {
   year: string;
   role: string;
   image: string;
+  gallery?: ProjectImage[];
   diffImage?: string;
   diffImageAlt?: string;
   imageAlt?: string;
@@ -92,6 +99,39 @@ export const PROJECTS: Project[] = [
     stack: ["Next.js", "GitHub API", "Tailwind CSS"],
     link: "https://github-compass.vercel.app/",
     github: "https://github.com/KarimaTouhami/github-compass",
+    featured: true,
+    status: 'completed'
+  },
+  {
+    id: 6,
+    title: "Swan Archives",
+    company: "Personal Project",
+    year: "2026",
+    role: "Full Stack Developer",
+    image: "/projects/swan-archives.webp",
+    imageAlt: "Swan Archives 3D journal configurator",
+    gallery: [
+      {
+        src: "/projects/swan-archives.webp",
+        alt: "Swan Archives 3D journal configurator with a live price estimate",
+        caption: "The custom-order wizard: a procedural 3D preview, live pricing and an eight-step design flow.",
+      },
+      {
+        src: "/projects/swan-landing.webp",
+        alt: "Swan Archives landing page with handmade leather journals",
+        caption: "A scroll-driven storefront for handmade leather journals from Morocco.",
+      },
+      {
+        src: "/projects/swan-collection.webp",
+        alt: "Swan Archives ready-made journal collection with live stock",
+        caption: "The ready-made collection, with live stock and per-item availability.",
+      },
+    ],
+    category: "3D E-commerce",
+    description: "A live storefront for handmade leather journals, built end to end. Its centrepiece is a procedural 3D configurator - leather, charms, lace and embossing - that prices a custom journal in real time and exports a branded order PDF, backed by an admin dashboard, Neon Postgres and Cloudflare's edge.",
+    stack: ["Next.js", "TypeScript", "Three.js", "Neon Postgres", "Cloudflare Workers"],
+    link: "https://swanarchives.store",
+    github: "private",
     featured: true,
     status: 'completed'
   }

@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { ArrowLeft, ExternalLink, Github } from 'lucide-react';
 import { PROJECTS } from '@/data/projects';
 import { LazyImage } from '@/components/ui/LazyImage';
+import { ProjectGallery } from '@/components/ui/ProjectGallery';
 import { usePageTitle } from '@/hooks/usePageTitle';
 import { PrivateRepoModal } from '@/components/ui/PrivateRepoModal';
 import { NotHostedModal } from '@/components/ui/NotHosted';
@@ -49,6 +50,10 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({ projectId 
       </div>
     );
   }
+
+  const gallery = project.gallery?.length
+    ? project.gallery
+    : [{ src: project.image, alt: project.imageAlt || `${project.title} base image` }];
 
   return (
     <div className="pt-28 min-h-screen max-w-6xl mx-auto px-6">
@@ -110,17 +115,18 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({ projectId 
           </div>
         </div>
 
-        <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-neutral-200 dark:border-neutral-800 animate-in slide-in-from-bottom-8 duration-1000 delay-200 fade-in fill-mode-both aspect-16/10 order-1 lg:order-2">
-          <LazyImage
-            src={project.image}
-            alt={project.imageAlt || `${project.title} base image`}
-            fill
-            priority
-            className="w-full h-full object-cover"
-          />
+        <div className="order-1 lg:order-2 animate-in slide-in-from-bottom-8 duration-1000 delay-200 fade-in fill-mode-both">
+          {showArtemisDiff && project.diffImage ? (
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-neutral-200 dark:border-neutral-800 aspect-16/10">
+              <LazyImage
+                src={project.image}
+                alt={project.imageAlt || `${project.title} base image`}
+                fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="w-full h-full object-cover"
+              />
 
-          {showArtemisDiff && project.diffImage && (
-            <>
               <div
                 className="absolute inset-0"
                 style={{ clipPath: `inset(0 ${100 - diffPosition}% 0 0)` }}
@@ -129,6 +135,7 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({ projectId 
                   src={project.diffImage}
                   alt={project.diffImageAlt || `${project.title} diff image`}
                   fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -155,7 +162,9 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({ projectId 
                 className="absolute inset-0 z-30 w-full h-full opacity-0 cursor-ew-resize"
                 aria-label="Adjust image diff slider"
               />
-            </>
+            </div>
+          ) : (
+            <ProjectGallery images={gallery} title={project.title} />
           )}
         </div>
       </div>

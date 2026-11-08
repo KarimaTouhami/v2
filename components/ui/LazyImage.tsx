@@ -9,6 +9,8 @@ interface LazyImageProps {
   fill?: boolean;
   width?: number;
   height?: number;
+  sizes?: string;
+  quality?: number;
 }
 
 export const LazyImage: React.FC<LazyImageProps> = ({ 
@@ -18,7 +20,9 @@ export const LazyImage: React.FC<LazyImageProps> = ({
   priority = false,
   fill = false,
   width,
-  height
+  height,
+  sizes,
+  quality = 85
 }) => {
   const [isLoaded, setIsLoaded] = useState(false);
   
@@ -30,8 +34,8 @@ export const LazyImage: React.FC<LazyImageProps> = ({
           alt={alt}
           fill
           priority={priority}
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          quality={85}
+          sizes={sizes ?? "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"}
+          quality={quality}
           onLoad={() => setIsLoaded(true)}
           className={`object-cover transition-all duration-700 ease-out ${
             isLoaded ? 'opacity-100 scale-100 blur-0' : 'opacity-0 scale-105 blur-lg'
@@ -44,8 +48,8 @@ export const LazyImage: React.FC<LazyImageProps> = ({
           width={width || 1200}
           height={height || 675}
           priority={priority}
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          quality={85}
+          sizes={sizes ?? "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"}
+          quality={quality}
           onLoad={() => setIsLoaded(true)}
           className={`w-full h-full object-cover transition-all duration-700 ease-out ${
             isLoaded ? 'opacity-100 scale-100 blur-0' : 'opacity-0 scale-105 blur-lg'
