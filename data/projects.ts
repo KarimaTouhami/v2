@@ -73,36 +73,6 @@ export const PROJECTS: Project[] = [
     status: 'completed'
   },
   {
-    id: 4,
-    title: "The Tea is Gone",
-    company: "ALX Africa",
-    year: "2024",
-    role: "Full Stack Developer",
-    image: "/projects/the-tea-is-gone-home-page.webp",
-    category: "Social Media App",
-    description: "Full-stack social media app enabling users to share tea experiences. Implemented real-time notifications using Appwrite.",
-    stack: ["React", "Appwrite", "TypeScript", "Shadcn UI", "Tailwind CSS"],
-    link: "https://the-tea-is-gone.vercel.app/",
-    github: "private",
-    featured: false,
-    status: 'completed'
-  },
-  {
-    id: 5,
-    title: "GitHub Compass",
-    company: "Open Source",
-    year: "2025",
-    role: "Full Stack Developer",
-    image: "/projects/github-compass.webp",
-    category: "DevTool",
-    description: "A GitHub validator I built for recruiters to separate a developer's real contributions from tutorials \"noise\"",
-    stack: ["Next.js", "GitHub API", "Tailwind CSS"],
-    link: "https://github-compass.vercel.app/",
-    github: "https://github.com/KarimaTouhami/github-compass",
-    featured: true,
-    status: 'completed'
-  },
-  {
     id: 6,
     title: "Swan Archives",
     company: "Swan Archives",
@@ -132,6 +102,36 @@ export const PROJECTS: Project[] = [
     stack: ["Next.js", "TypeScript", "Three.js", "Neon Postgres", "Cloudflare Workers"],
     link: "https://swanarchives.store",
     github: "private",
+    featured: true,
+    status: 'completed'
+  },
+  {
+    id: 4,
+    title: "The Tea is Gone",
+    company: "ALX Africa",
+    year: "2024",
+    role: "Full Stack Developer",
+    image: "/projects/the-tea-is-gone-home-page.webp",
+    category: "Social Media App",
+    description: "Full-stack social media app enabling users to share tea experiences. Implemented real-time notifications using Appwrite.",
+    stack: ["React", "Appwrite", "TypeScript", "Shadcn UI", "Tailwind CSS"],
+    link: "https://the-tea-is-gone.vercel.app/",
+    github: "private",
+    featured: false,
+    status: 'completed'
+  },
+  {
+    id: 5,
+    title: "GitHub Compass",
+    company: "Open Source",
+    year: "2025",
+    role: "Full Stack Developer",
+    image: "/projects/github-compass.webp",
+    category: "DevTool",
+    description: "A GitHub validator I built for recruiters to separate a developer's real contributions from tutorials \"noise\"",
+    stack: ["Next.js", "GitHub API", "Tailwind CSS"],
+    link: "https://github-compass.vercel.app/",
+    github: "https://github.com/KarimaTouhami/github-compass",
     featured: true,
     status: 'completed'
   }
