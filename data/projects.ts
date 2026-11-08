@@ -105,7 +105,7 @@ export const PROJECTS: Project[] = [
   {
     id: 6,
     title: "Swan Archives",
-    company: "Personal Project",
+    company: "Swan Archives",
     year: "2026",
     role: "Full Stack Developer",
     image: "/projects/swan-archives.webp",
