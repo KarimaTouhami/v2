@@ -68,7 +68,7 @@ export const PROJECTS: Project[] = [
     description: "Built the landing page for a dental clinic management SaaS, focusing on responsive design and user experience to attract potential clients.",
     stack: ["Next.js", "Supabase", "Shadcn UI", "Tailwind CSS"],
     link: "https://dentist-website-murex.vercel.app/",
-    github: "https://github.com/KarimaTouhami/Dantex",
+    github: "private",
     featured: false,
     status: 'completed'
   },
