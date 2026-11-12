@@ -13,8 +13,9 @@ export const StackPage: React.FC = () => {
       <RevealOnScroll className="mb-12 md:mb-16">
         <h1 className="text-5xl md:text-7xl font-bold mb-6 font-inter">Tech Stack</h1>
         <p className="text-lg md:text-xl text-neutral-500 max-w-2xl">
-          My technical arsenal. I focus on modern, scalable, and type-safe technologies
-          that allow for rapid development and maintainable codebases.
+          Tools I actually use. I work from backend and data through to the interface, with a
+          growing focus on AI and interaction design. These are what I reach for when I want
+          to ship quickly and keep the codebase readable.
         </p>
       </RevealOnScroll>
       

@@ -127,7 +127,7 @@ export const ContactForm: React.FC = () => {
 
         {status === 'success' && (
           <span className="flex items-center gap-2 text-green-600 dark:text-green-400 font-medium text-sm">
-            <CheckCircle2 size={18} /> Thanks — I&apos;ll get back to you.
+            <CheckCircle2 size={18} /> Thanks, I&apos;ll get back to you.
           </span>
         )}
         {status === 'error' && (

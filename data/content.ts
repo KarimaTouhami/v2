@@ -1,4 +1,4 @@
-import { Terminal, Layout, Wrench } from 'lucide-react';
+import { Terminal, Layout, Database, Server, Sparkles } from 'lucide-react';
 import React from 'react';
 
 export interface Experience {
@@ -68,18 +68,28 @@ export const EDUCATION: Education[] = [
 
 export const STACK_CATEGORIES: StackCategory[] = [
   {
-    title: "Core Languages",
+    title: "Languages",
     icon: React.createElement(Terminal, { size: 20 }),
-    skills: ["JavaScript (ES6+)", "TypeScript", "Python", "PHP", "SQL"]
+    skills: ["TypeScript", "JavaScript (ES6+)", "Python", "PHP", "SQL", "Rust"]
   },
   {
-    title: "Frontend Ecosystem",
+    title: "Frontend & Interaction",
     icon: React.createElement(Layout, { size: 20 }),
-    skills: ["React", "Next.js", "Tailwind CSS", "Framer Motion"]
+    skills: ["React", "Next.js", "Tailwind CSS", "Shadcn UI", "Framer Motion", "Three.js"]
   },
   {
-    title: "Backend & Infrastructure",
-    icon: React.createElement(Wrench, { size: 20 }),
-    skills: ["Node.js", "PostgreSQL", "Symfony 7.4", "Docker", "Git/CI/CD", "WSL2/Zsh"]
+    title: "Backend & Data",
+    icon: React.createElement(Database, { size: 20 }),
+    skills: ["Node.js", "Symfony", "PostgreSQL", "Supabase", "Appwrite", "Neon", "Odoo ERP"]
+  },
+  {
+    title: "AI & Interaction",
+    icon: React.createElement(Sparkles, { size: 20 }),
+    skills: ["OpenAI API", "Anthropic API"]
+  },
+  {
+    title: "Infrastructure & Tools",
+    icon: React.createElement(Server, { size: 20 }),
+    skills: ["Docker", "Cloudflare Workers", "Vercel", "Git/CI", "WSL2/Zsh"]
   }
 ];

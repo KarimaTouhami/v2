@@ -28,7 +28,7 @@ export const Navigation = React.memo(() => {
         >
           <div className="flex flex-col">
             <span className="font-bold text-lg leading-none tracking-tight font-inter">Karima Touhami</span>
-            <span className="text-xs text-neutral-500 font-mono group-hover:text-neutral-800 dark:group-hover:text-neutral-300 transition-colors">Software Engineer</span>
+            <span className="text-xs text-neutral-500 font-mono group-hover:text-neutral-800 dark:group-hover:text-neutral-300 transition-colors">Full-Stack Engineer · AI &amp; HCI</span>
           </div>
         </Link>
 

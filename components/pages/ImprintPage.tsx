@@ -22,7 +22,7 @@ export const ImprintPage: React.FC = () => {
             <h2 className="text-2xl md:text-3xl font-bold mb-6 text-neutral-900 dark:text-white">Contact Information</h2>
             <div className="bg-neutral-50 dark:bg-neutral-900 rounded-2xl p-8 border border-neutral-200 dark:border-neutral-800">
               <h3 className="text-xl font-bold mb-4 text-neutral-900 dark:text-white">Karima Touhami</h3>
-              <p className="text-neutral-600 dark:text-neutral-400 mb-2">Software Development Engineer</p>
+              <p className="text-neutral-600 dark:text-neutral-400 mb-2">Full-Stack Software Engineer</p>
 
               <div className="flex items-start gap-3 mt-6">
                 <Mail size={20} className="text-neutral-500 mt-1 flex-shrink-0" />

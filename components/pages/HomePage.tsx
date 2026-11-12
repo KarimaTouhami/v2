@@ -30,15 +30,15 @@ export const HomePage: React.FC = () => {
           <div className="relative">
             <h1 className="text-5xl sm:text-4xl md:text-7xl lg:text-8xl xl:text-7xl font-bold tracking-tight mb-8 leading-none text-neutral-900 dark:text-white font-inter">
               I&apos;m Karima. <br />
-              I build <span className="text-neutral-400 dark:text-neutral-600">scalable</span> <br />
-              software solutions.
+              I build <span className="text-neutral-400 dark:text-neutral-600">intelligent</span> <br />
+              software end to end.
             </h1>
           </div>
         </RevealOnScroll>
 
         <RevealOnScroll delay={200}>
           <p className="text-lg md:text-2xl text-neutral-500 max-w-2xl leading-relaxed mb-12 font-light">
-            Software Engineer specializing in modern frontend architecture and high-performance web applications. I turn complex problems into simple, elegant user experiences.
+            Full-stack engineer. My focus is AI and human-computer interaction, which in practice means I care about how a system behaves as much as how it looks. I like owning a feature from schema to screen.
           </p>
         </RevealOnScroll>
 
@@ -85,10 +85,13 @@ export const HomePage: React.FC = () => {
         <RevealOnScroll>
           <div className="text-neutral-600 dark:text-neutral-300 leading-relaxed text-lg mb-8 max-w-3xl">
             <p className="mb-6">
-              I&apos;m a Software Engineer specializing in modern frontend architecture and high-performance web applications. I thrive on turning complex technical problems into simple, elegant user experiences.
+              I&apos;m a full-stack developer. I started on the data side, with SQL, PHP and Symfony, and ended up just as interested in what sits on top: the interface, the interaction, whether the thing actually makes sense to use. My focus now is AI and human-computer interaction, because they&apos;re the same problem pulled from both ends. The machine&apos;s logic on one side, the person trying to work with it on the other.
+            </p>
+            <p className="mb-6">
+              I work across the stack, not just on top of it. Recent work: a Symfony migration off legacy PHP at Ein Consulting, a Rust compiler visualizer that shows C turning into assembly, and a 3D product configurator for a leather workshop in Morocco that prices a custom journal in real time. I usually own the whole path: schema, API, interface, deploy.
             </p>
             <p>
-              Outside of my core engineering work, I bring a creative edge to everything I do. I&apos;m an artist at heart and love building unique side projects that blend form, function, and code.
+              The visual side isn&apos;t separate from that. Outside of work I make things: drawings, small tools, half-finished experiments. That&apos;s where most of my taste for typography, motion and detail comes from, and it ends up in production work too.
             </p>
           </div>
         </RevealOnScroll>

@@ -236,7 +236,7 @@ export const ProjectGallery: React.FC<ProjectGalleryProps> = ({ images, title, c
               <p className="truncate font-mono text-[11px] uppercase tracking-[0.2em] text-white/60">
                 {title}
                 <span className="mx-2 text-white/25">/</span>
-                {String(safeIndex + 1).padStart(2, '0')} — {String(total).padStart(2, '0')}
+                {String(safeIndex + 1).padStart(2, '0')} / {String(total).padStart(2, '0')}
               </p>
               <button
                 ref={closeRef}

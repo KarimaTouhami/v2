@@ -56,11 +56,11 @@ v2/
 
 ## ✨ Features That Slap
 
-* **Smooth AF Animations** – Powered by Framer Motion.
-* **Responsive** – Looks fire on everything from an iPhone to a smart fridge.
-* **Adaptive Theme** – Intelligent Dark/Light mode via `localStorage`.
-* **Custom Cursor** – Adding that extra bit of spice.
-* **Contact Form** – Slide into my DMs (professionally).
+* **Smooth AF Animations**: Powered by Framer Motion.
+* **Responsive**: Looks fire on everything from an iPhone to a smart fridge.
+* **Adaptive Theme**: Intelligent Dark/Light mode via `localStorage`.
+* **Custom Cursor**: Adding that extra bit of spice.
+* **Contact Form**: Slide into my DMs (professionally).
 
 ---
 

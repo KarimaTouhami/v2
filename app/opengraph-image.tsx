@@ -46,7 +46,7 @@ export default async function Image() {
           <div style={{ display: 'flex', flexDirection: 'column' }}>
             <div style={{ fontSize: 72, fontWeight: 'bold' }}>Karima Touhami</div>
             <div style={{ fontSize: 32, color: '#a3a3a3', fontWeight: 'normal' }}>
-              Software Engineer
+              Full-Stack Engineer · AI &amp; HCI
             </div>
           </div>
         </div>

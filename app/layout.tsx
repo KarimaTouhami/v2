@@ -24,11 +24,11 @@ const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://karimatouhami.com';
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
-  title: "Karima Touhami | Software Engineer",
-  description: "Portfolio of Karima Touhami, featuring software engineering work, career history, and contact details.",
+  title: "Karima Touhami | Full-Stack Engineer, AI & HCI",
+  description: "Karima Touhami is a full-stack software engineer working on AI and human-computer interaction. Projects, background, and contact.",
   openGraph: {
-    title: "Karima Touhami | Software Engineer",
-    description: "Portfolio of Karima Touhami, featuring software engineering work, career history, and contact details.",
+    title: "Karima Touhami | Full-Stack Engineer, AI & HCI",
+    description: "Karima Touhami is a full-stack software engineer working on AI and human-computer interaction. Projects, background, and contact.",
     url: baseUrl,
     siteName: "Karima Touhami",
     locale: "en_US",
@@ -36,8 +36,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Karima Touhami | Software Engineer",
-    description: "Portfolio of Karima Touhami, featuring software engineering work, career history, and contact details.",
+    title: "Karima Touhami | Full-Stack Engineer, AI & HCI",
+    description: "Karima Touhami is a full-stack software engineer working on AI and human-computer interaction. Projects, background, and contact.",
   },
   alternates: {
     canonical: baseUrl,
