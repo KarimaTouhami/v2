@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+/* Dark mode follows the `.dark` class on <html> (set before paint in layout.tsx),
+   so the toggle, the CSS vars and every `dark:` utility always agree. */
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -27,6 +31,8 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-inter: var(--font-inter);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .dark {
@@ -40,8 +46,21 @@
   --ring: #ffffff;
 }
 
-* {
+html {
   scroll-behavior: smooth;
+  color-scheme: light;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+h1, h2, h3 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
 }
 
 *:focus-visible {
@@ -85,6 +104,11 @@ img {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+
+  /* Scroll progress is tied to scroll position, not time, so keep it working. */
+  .scroll-progress {
+    animation-duration: auto !important;
+  }
 }
 
 /* Custom scrollbar */
@@ -109,4 +133,119 @@ img {
 * {
   scrollbar-width: thin;
   scrollbar-color: var(--border) transparent;
+}
+
+/* ---------- Enter animations (animate-in / fade-in / zoom-in / slide-in) ---------- */
+@keyframes enter {
+  from {
+    opacity: var(--tw-enter-opacity, 1);
+    transform: translate3d(var(--tw-enter-translate-x, 0), var(--tw-enter-translate-y, 0), 0)
+      scale(var(--tw-enter-scale, 1));
+  }
+}
+
+@utility animate-in {
+  animation-name: enter;
+  animation-duration: var(--tw-duration, 300ms);
+  animation-timing-function: var(--ease-out-expo);
+  /* backwards, not both: once finished, no transform lingers to trap fixed children */
+  animation-fill-mode: backwards;
+}
+
+@utility fade-in {
+  --tw-enter-opacity: 0;
+}
+
+@utility zoom-in-* {
+  --tw-enter-scale: calc(--value(integer) * 1%);
+}
+
+@utility slide-in-from-bottom-* {
+  --tw-enter-translate-y: calc(var(--spacing) * --value(integer));
+}
+
+@utility slide-in-from-top-* {
+  --tw-enter-translate-y: calc(var(--spacing) * --value(integer) * -1);
+}
+
+@utility slide-in-from-left-* {
+  --tw-enter-translate-x: calc(var(--spacing) * --value(integer) * -1);
+}
+
+@utility slide-in-from-right-* {
+  --tw-enter-translate-x: calc(var(--spacing) * --value(integer));
+}
+
+@utility fill-mode-both {
+  animation-fill-mode: both;
+}
+
+/* ---------- Route enter (app/template.tsx) ---------- */
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 8px, 0);
+  }
+}
+
+.page-enter {
+  animation: page-enter 500ms var(--ease-out-expo) backwards;
+}
+
+/* ---------- Scroll progress: pure CSS, progressive enhancement ---------- */
+.scroll-progress {
+  display: none;
+}
+
+@supports (animation-timeline: scroll()) {
+  @keyframes grow-x {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+  }
+
+  .scroll-progress {
+    display: block;
+    transform-origin: 0 50%;
+    animation: grow-x linear both;
+    animation-timeline: scroll(root block);
+  }
+}
+
+/* ---------- Theme switch: circular reveal via View Transitions ---------- */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-new(root) {
+  animation: theme-reveal 550ms var(--ease-out-expo);
+}
+
+@keyframes theme-reveal {
+  from {
+    clip-path: circle(0 at var(--vt-x, 50%) var(--vt-y, 0%));
+  }
+  to {
+    clip-path: circle(var(--vt-r, 150%) at var(--vt-x, 50%) var(--vt-y, 0%));
+  }
+}
+
+/* Native cursor stays visible for text entry even when the custom cursor is on. */
+.has-custom-cursor,
+.has-custom-cursor a,
+.has-custom-cursor button,
+.has-custom-cursor [role="button"],
+.has-custom-cursor label {
+  cursor: none;
+}
+
+.has-custom-cursor input,
+.has-custom-cursor textarea,
+.has-custom-cursor [contenteditable="true"] {
+  cursor: text;
+}
+
+.has-custom-cursor input[type="range"] {
+  cursor: ew-resize;
 }

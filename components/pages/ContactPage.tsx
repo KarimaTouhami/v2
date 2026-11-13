@@ -56,7 +56,7 @@ export const ContactPage: React.FC = () => {
         </div>
       </RevealOnScroll>
 
-      <RevealOnScroll delay={0.15}>
+      <RevealOnScroll delay={150}>
         <div className="mt-20">
           <div className="flex items-center gap-4 mb-8">
             <div className="p-4 bg-neutral-50 dark:bg-neutral-800 rounded-2xl shadow-sm">
@@ -73,7 +73,7 @@ export const ContactPage: React.FC = () => {
         </div>
       </RevealOnScroll>
 
-      <RevealOnScroll delay={0.2}>
+      <RevealOnScroll delay={200}>
         <div className="mt-20">
           <GitHubCalendar username="KarimaTouhami" />
         </div>

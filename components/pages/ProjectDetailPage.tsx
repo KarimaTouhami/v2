@@ -1,9 +1,8 @@
 'use client';
 
 import React, { useState } from 'react';
-import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { ArrowLeft, ExternalLink, Github } from 'lucide-react';
+import { ArrowLeft, ArrowRight, ExternalLink, Github } from 'lucide-react';
 import { PROJECTS } from '@/data/projects';
 import { LazyImage } from '@/components/ui/LazyImage';
 import { ProjectGallery } from '@/components/ui/ProjectGallery';
@@ -16,8 +15,8 @@ interface ProjectDetailPageProps {
 }
 
 export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({ projectId }) => {
-  const router = useRouter();
-  const project = PROJECTS.find(p => p.id === Number(projectId));
+  const projectIndex = PROJECTS.findIndex(p => p.id === Number(projectId));
+  const project = projectIndex >= 0 ? PROJECTS[projectIndex] : undefined;
 
   usePageTitle(project?.title ?? null);
   const [showPrivateModal, setShowPrivateModal] = useState(false);
@@ -44,12 +43,15 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({ projectId 
     return (
       <div className="pt-28 min-h-screen max-w-6xl mx-auto px-6">
         <h1 className="text-2xl font-bold">Project not found</h1>
-        <Link href="/projects" className="text-blue-500 hover:underline mt-4 inline-block">
+        <Link href="/projects" className="mt-4 inline-flex items-center gap-2 font-medium underline underline-offset-4 decoration-neutral-300 hover:decoration-current transition-colors">
           Back to Projects
         </Link>
       </div>
     );
   }
+
+  const prevProject = PROJECTS[(projectIndex - 1 + PROJECTS.length) % PROJECTS.length];
+  const nextProject = PROJECTS[(projectIndex + 1) % PROJECTS.length];
 
   const gallery = project.gallery?.length
     ? project.gallery
@@ -59,18 +61,18 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({ projectId 
     <div className="pt-28 min-h-screen max-w-6xl mx-auto px-6">
       <PrivateRepoModal isOpen={showPrivateModal} onClose={() => setShowPrivateModal(false)} />
       <NotHostedModal isOpen={showNotHostedModal} onClose={() => setShowNotHostedModal(false)} />
-      <button
-        onClick={() => router.back()}
-        className="group flex items-center gap-2 text-sm font-medium text-neutral-500 hover:text-black dark:hover:text-white mb-8 md:mb-12 transition-colors"
+      <Link
+        href="/projects"
+        className="group inline-flex items-center gap-2 text-sm font-medium text-neutral-500 hover:text-black dark:hover:text-white mb-8 md:mb-12 transition-colors"
       >
-        <div className="p-2 rounded-full bg-neutral-100 dark:bg-neutral-900 group-hover:bg-neutral-200 dark:group-hover:bg-neutral-800 transition-colors">
-          <ArrowLeft size={16} />
-        </div>
+        <span className="p-2 rounded-full bg-neutral-100 dark:bg-neutral-900 group-hover:bg-neutral-200 dark:group-hover:bg-neutral-800 transition-colors">
+          <ArrowLeft size={16} className="group-hover:-translate-x-0.5 transition-transform" />
+        </span>
         Back to Projects
-      </button>
+      </Link>
 
       <div className="grid lg:grid-cols-2 gap-8 md:gap-16 mb-20 items-start">
-        <div className="animate-in slide-in-from-left-8 duration-700 fade-in fill-mode-both order-2 lg:order-1">
+        <div className="animate-in slide-in-from-left-8 duration-700 fade-in order-2 lg:order-1">
           <div className="inline-block px-3 py-1 mb-6 rounded-full bg-neutral-100 dark:bg-neutral-900 text-neutral-600 dark:text-neutral-300 text-xs font-mono font-medium uppercase tracking-wider">
             {project.category}
           </div>
@@ -115,7 +117,7 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({ projectId 
           </div>
         </div>
 
-        <div className="order-1 lg:order-2 animate-in slide-in-from-bottom-8 duration-1000 delay-200 fade-in fill-mode-both">
+        <div className="order-1 lg:order-2 animate-in slide-in-from-bottom-8 duration-1000 fade-in [animation-delay:150ms]">
           {showArtemisDiff && project.diffImage ? (
             <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-neutral-200 dark:border-neutral-800 aspect-16/10">
               <LazyImage
@@ -169,7 +171,7 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({ projectId 
         </div>
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-20 animate-in slide-in-from-bottom-4 duration-700 delay-300 fade-in fill-mode-both">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-20 animate-in slide-in-from-bottom-4 duration-700 fade-in [animation-delay:300ms]">
         <div className="p-6 md:p-8 bg-neutral-50 dark:bg-neutral-900 rounded-3xl border border-neutral-100 dark:border-neutral-800">
           <p className="text-xs text-neutral-400 uppercase tracking-wider mb-2">Year</p>
           <p className="font-bold text-lg md:text-xl">{project.year}</p>
@@ -190,6 +192,31 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({ projectId 
           </div>
         </div>
       </div>
+      {PROJECTS.length > 1 && (
+        <nav aria-label="More projects" className="grid sm:grid-cols-2 gap-4 mb-24 border-t border-neutral-100 dark:border-neutral-800 pt-12">
+          {[
+            { dir: 'Previous', p: prevProject },
+            { dir: 'Next', p: nextProject },
+          ].map(({ dir, p }) => (
+            <Link
+              key={dir}
+              href={`/projects/${p.id}`}
+              className={`group p-6 md:p-8 rounded-3xl border border-neutral-200 dark:border-neutral-800 hover:border-neutral-900 dark:hover:border-neutral-500 bg-neutral-50 dark:bg-neutral-900 transition-colors flex flex-col gap-2 ${dir === 'Next' ? 'sm:items-end sm:text-right' : ''}`}
+            >
+              <span className={`flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-neutral-400 ${dir === 'Next' ? 'sm:flex-row-reverse' : ''}`}>
+                {dir === 'Previous' ? (
+                  <ArrowLeft size={14} className="group-hover:-translate-x-1 transition-transform" />
+                ) : (
+                  <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                )}
+                {dir} project
+              </span>
+              <span className="text-xl md:text-2xl font-bold font-inter tracking-tight">{p.title}</span>
+              <span className="text-sm text-neutral-500">{p.category}</span>
+            </Link>
+          ))}
+        </nav>
+      )}
     </div>
   );
 };

@@ -15,7 +15,7 @@ export const ProjectCard = React.memo<ProjectCardProps>(({ project, index }) => 
     <Link
       href={`/projects/${project.id}`}
       aria-label={`View project: ${project.title}`}
-      className="group relative cursor-pointer overflow-hidden rounded-3xl bg-neutral-100 dark:bg-neutral-900 transition-all hover:scale-[1.02] hover:shadow-2xl hover:shadow-neutral-300/20 dark:hover:shadow-black/40 duration-500 border border-neutral-200 dark:border-neutral-800 hover:border-neutral-300 dark:hover:border-neutral-700 block"
+      className="group relative cursor-pointer overflow-hidden rounded-3xl bg-neutral-100 dark:bg-neutral-900 transition-all ease-(--ease-out-expo) hover:scale-[1.02] focus-visible:scale-[1.02] hover:shadow-2xl hover:shadow-neutral-300/20 dark:hover:shadow-black/40 duration-500 border border-neutral-200 dark:border-neutral-800 hover:border-neutral-300 dark:hover:border-neutral-700 block"
     >
       <div className="aspect-video w-full overflow-hidden">
         <LazyImage
@@ -26,8 +26,8 @@ export const ProjectCard = React.memo<ProjectCardProps>(({ project, index }) => 
           className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
         />
       </div>
-      <div className="absolute inset-0 bg-linear-to-t from-black/95 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6 md:p-8 text-white">
-        <div className="translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75 ease-out">
+      <div className="absolute inset-0 bg-linear-to-t from-black/95 via-black/50 to-transparent opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6 md:p-8 text-white">
+        <div className="translate-y-4 group-hover:translate-y-0 group-focus-visible:translate-y-0 transition-transform duration-500 delay-75 ease-(--ease-out-expo)">
           <p className="text-green-400 font-mono text-xs mb-2 uppercase tracking-wider">{project.category}</p>
           <h3 className="text-xl md:text-2xl font-bold mb-2 font-inter">{project.title}</h3>
           <p className="text-sm text-neutral-300 mb-4 line-clamp-2">{project.description}</p>
@@ -41,14 +41,14 @@ export const ProjectCard = React.memo<ProjectCardProps>(({ project, index }) => 
         </div>
       </div>
 
-      <div className="p-5 md:p-6 bg-white dark:bg-neutral-900 absolute bottom-0 w-full group-hover:translate-y-full transition-transform duration-500 ease-in-out border-t border-neutral-100 dark:border-neutral-800">
+      <div className="p-5 md:p-6 bg-white dark:bg-neutral-900 absolute bottom-0 w-full group-hover:translate-y-full group-focus-visible:translate-y-full transition-transform duration-500 ease-(--ease-out-expo) border-t border-neutral-100 dark:border-neutral-800">
         <div className="flex justify-between items-center">
           <div>
             <h3 className="text-lg font-bold text-neutral-900 dark:text-white font-inter">{project.title}</h3>
             <p className="text-sm text-neutral-500">{project.category} • {project.year}</p>
           </div>
-          <div className="h-10 w-10 rounded-full bg-neutral-100 dark:bg-neutral-800 flex items-center justify-center group-hover:bg-black group-hover:text-white transition-colors">
-            <ArrowRight size={16} className="text-neutral-600 dark:text-neutral-400" />
+          <div className="h-10 w-10 rounded-full bg-neutral-100 dark:bg-neutral-800 flex items-center justify-center group-hover:bg-black dark:group-hover:bg-white transition-colors">
+            <ArrowRight size={16} className="text-neutral-600 dark:text-neutral-400 group-hover:text-white dark:group-hover:text-black -rotate-45 group-hover:rotate-0 transition-all duration-300" />
           </div>
         </div>
       </div>

@@ -9,13 +9,15 @@ import { EXPERIENCE, EDUCATION } from '@/data/content';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { RevealOnScroll } from '@/components/ui/RevealOnScroll';
 import { ProjectCard } from '@/components/ui/ProjectCard';
+import { openCommandPalette, useShortcutLabel } from '@/components/ui/CommandPalette';
 
 export const HomePage: React.FC = () => {
   usePageTitle('Home');
+  const shortcut = useShortcutLabel();
 
   return (
     <div>
-      <section className="pt-32 md:pt-40 pb-24 px-6 max-w-6xl mx-auto min-h-[90vh] flex flex-col justify-center">
+      <section className="pt-32 md:pt-40 pb-24 px-6 max-w-6xl mx-auto min-h-[90svh] flex flex-col justify-center">
         <RevealOnScroll>
           <div className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-400 text-xs font-bold uppercase tracking-wider mb-10 border-2 border-green-200 dark:border-green-900/40 shadow-sm">
             <span className="relative flex h-2.5 w-2.5">
@@ -28,7 +30,7 @@ export const HomePage: React.FC = () => {
 
         <RevealOnScroll delay={100}>
           <div className="relative">
-            <h1 className="text-5xl sm:text-4xl md:text-7xl lg:text-8xl xl:text-7xl font-bold tracking-tight mb-8 leading-none text-neutral-900 dark:text-white font-inter">
+            <h1 className="text-[clamp(2.75rem,7.5vw,5.25rem)] font-bold tracking-tighter mb-8 leading-[0.95] text-neutral-900 dark:text-white font-inter">
               I&apos;m Karima. <br />
               I build <span className="text-neutral-400 dark:text-neutral-600">intelligent</span> <br />
               software end to end.
@@ -46,7 +48,7 @@ export const HomePage: React.FC = () => {
           <div className="flex flex-col sm:flex-row gap-4 items-start">
             <Link
               href="/contact"
-              className="w-full sm:w-auto px-8 py-4 bg-neutral-900 dark:bg-white text-white dark:text-black rounded-full font-bold text-lg hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2 shadow-lg font-inter"
+              className="group w-full sm:w-auto px-8 py-4 bg-neutral-900 dark:bg-white text-white dark:text-black rounded-full font-bold text-lg hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 ease-(--ease-out-expo) flex items-center justify-center gap-2 shadow-lg font-inter"
             >
               Start a Project <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
             </Link>
@@ -57,6 +59,18 @@ export const HomePage: React.FC = () => {
               View Portfolio
             </Link>
           </div>
+        </RevealOnScroll>
+
+        <RevealOnScroll delay={400}>
+          <button
+            type="button"
+            onClick={openCommandPalette}
+            className="hidden md:inline-flex items-center gap-2 mt-10 text-sm text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors"
+          >
+            Press
+            <kbd className="font-mono text-[11px] px-1.5 py-0.5 rounded-md border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-900">{shortcut}</kbd>
+            to jump anywhere
+          </button>
         </RevealOnScroll>
       </section>
 
